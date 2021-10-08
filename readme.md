@@ -4,8 +4,15 @@ Dotfiles
 
 ## MacOS
 
-#### Install stow
+#### Install Homebrew
 
-`$ brew install stow`
+`$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`  
 
 
+#### Clone dotfiles repo
+`$ cd && git clone git@github.com:MikHM/.dotfiles.git`
+
+
+#### Run Installation script
+
+`$ zsh install`

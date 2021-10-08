@@ -1,0 +1,27 @@
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+
+else
+  echo "Setting up your MACOS"
+  echo "---------------------"
+
+  echo Installing Homebrew"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  "
+  
+  echo "Installing Stow"
+  brew install stow
+  brew install rbenv
+  brew install nvm
+  brew Install mysql
+
+  rbenv install 2.6.6
+  nvm install 14.17.0
+fi
+
+stow git
+stow nvim
+stow vim
+stow zsh
+
+mkdir ~/Sites
+
