@@ -1,0 +1,8 @@
+[user]
+	email = hemroda@gmail.com
+	name = hemroda
+[color]
+	ui = true
+
+[core]
+	excludesfile = /Users/hemroda/.gitignore_global

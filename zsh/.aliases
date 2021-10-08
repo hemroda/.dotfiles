@@ -1,0 +1,57 @@
+# System
+alias vz="vim ~/.zshrc"
+alias nvz="nvim ~/.zshrc"
+alias sz="source ~/.zshrc"
+alias cv="nvim ~/.vimrc"
+alias cnv="nvim ~/.config/nvim/init.vim"
+alias l="ls -la"
+alias cport="sudo lsof -nP -iTCP:1025 -sTCP:LISTEN"
+alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
+
+# Navigation
+alias d="cd ~/.dotfiles"
+alias s="cd ~/Sites"
+alias b="cd ~/Sites/bergamotte"
+alias h="cd ~/Sites/happydemics2"
+alias hd="cd ~/Sites/happydemics_dashboard"
+alias ma="cd ~/Sites/maavita"
+alias la="cd ~/Sites/laterite"
+alias rp="cd ~/Sites/ruby_playground"
+
+# Rails
+alias bers="bundle exec rails server"
+alias berc="bundle exec rails console"
+alias wds="./bin/webpack-dev-server"
+alias fs="foreman start"
+alias bedc="bundle exec rails db:drop db:create"
+alias bem="bundle exec rails db:migrate"
+alias bes="bundle exec rails db:seed_fu"
+alias nuke="bedc; bem; bes"
+alias be='bundle exec'
+alias bi='bundle install'
+
+# Git
+alias ga="git add "
+alias gaa="git add ."
+alias gs="git status"
+alias gcm="git commit -m "
+alias gco="git checkout "
+alias gb="git branch "
+alias gca="git commit --amend -m "
+alias gcan='git commit --amend --no-edit -a'
+alias gpos="git pull origin staging"
+alias gpod="git pull origin develop"
+alias gpo="git pull origin "
+alias gp="git push "
+alias wip="git add .;git commit -m 'wip'"
+alias wipa="git add .;git commit -am 'wip'"
+alias nah='git reset --hard;git clean -df'
+alias please='git push --force-with-lease '
+alias oops='gcan;please'
+alias gclean='git branch --merged| egrep -v "(^\*|master|staging|develop)" | xargs git branch -d'
+
+# Dummy
+alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
+alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
+alias fight="printf '(ง'̀-'́)ง' | pbcopy"
+
