@@ -96,6 +96,12 @@ nmap <S-tab> <<
 " => Plugins Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" ============================ NerdTree =======================
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " ============================== FZF ==========================
 map <leader>p :Files<CR>
 map <leader>f :GFiles<CR>
