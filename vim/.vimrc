@@ -11,7 +11,7 @@ source $HOME/.vim/plugins.vim
 let mapleader = ','			                                      " Setting leader key to comma
 nmap <leader>sv :source ~/.dotfiles/vim/.vimrc<CR>
 nmap ,ev :tabedit ~/.dotfiles/vim/.vimrc<CR>		              " Open vimrc file in new buffer for quick edit
-nmap ,ep :tabedit ~/.dotfiles/vim/plugins.vim<CR>             " Open vimrc file in new buffer for quick edit
+nmap ,ep :tabedit ~/.dotfiles/vim/.vim/plugins.vim<CR>             " Open vimrc file in new buffer for quick edit
 nmap ,b :Buffers<CR>
 
 " ================= Split Opening Commands ====================
@@ -24,12 +24,8 @@ nnoremap <leader>v :vsplit<space>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 set termguicolors
+colorscheme gruvbox
 set background=dark
-colorscheme nightfly " tokyonight
-
-" specific options for tokyonight
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

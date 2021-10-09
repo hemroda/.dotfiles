@@ -22,6 +22,7 @@ stow git
 stow nvim
 stow vim
 stow zsh
+stow ruby
 
 mkdir ~/Sites
 

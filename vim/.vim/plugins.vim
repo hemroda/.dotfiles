@@ -14,8 +14,6 @@ call plug#begin('~/.vim/autoload/plugged')
   " Theme
   Plug 'morhetz/gruvbox'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'tomasiser/vim-code-dark'
-  Plug 'bluz71/vim-nightfly-guicolors'
   Plug 'vim-airline/vim-airline'
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'Yggdroot/indentLine'
