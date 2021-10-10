@@ -3,6 +3,10 @@
 	name = hemroda
 [color]
 	ui = true
-
 [core]
-	excludesfile = /Users/hemroda/.gitignore_global
+	excludesFile = /Users/$USER/.gitignore_global
+	editor = vim
+[log]
+	date = local
+[format]
+	pretty = format:%C(reverse yellow)%h%C(auto) %C(ul normal)%s%C(auto) %d%n%C(reset)%aN <%aE> %C(cyan)%ad %C(green)(%ar)%n

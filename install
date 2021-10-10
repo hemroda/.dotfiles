@@ -4,10 +4,6 @@ else
   echo "Setting up your MACOS"
   echo "---------------------"
 
-  echo Installing Homebrew"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  "
-  
   echo "Installing Stow"
   brew install stow
   brew install rbenv
