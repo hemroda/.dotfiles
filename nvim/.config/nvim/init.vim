@@ -102,6 +102,8 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+let NERDTreeShowHidden=1                                      " Show dotfiles i.e hidden files
+
 " ============================== FZF ==========================
 map <leader>p :Files<CR>
 map <leader>f :GFiles<CR>
