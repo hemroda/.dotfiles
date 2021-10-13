@@ -70,7 +70,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rvm)
+plugins=(git asdf rvm zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,5 +118,11 @@ export NVM_DIR="$HOME/.nvm"
 # ----------------------------------------------------------------------- #
 source ~/.dotfiles/zsh/.aliases
 
+
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+. $HOME/.asdf/asdf.sh
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)

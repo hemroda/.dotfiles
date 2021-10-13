@@ -24,3 +24,5 @@ tags
 
 # localhistory
 .history
+
+autoload/*

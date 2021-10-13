@@ -8,7 +8,10 @@ else
   brew install stow
   brew install rbenv
   brew install nvm
-  brew Install mysql
+  brew install mysql
+  brew install nvim
+  brew install zsh-syntax-highlighting
+  brew install zsh-autosuggestions
 
   rbenv install 2.6.6
   nvm install 14.17.0
