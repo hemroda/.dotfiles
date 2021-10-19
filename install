@@ -15,6 +15,7 @@ else
   brew install nvm
   brew install mysql
   brew install nvim
+  brew install vv
   brew install zsh-syntax-highlighting
   brew install zsh-autosuggestions
 
