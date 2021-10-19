@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # ----------------------------------------------------------------------- #
 # EXPORTS
 # ----------------------------------------------------------------------- #
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
@@ -109,15 +110,17 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
+export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
+
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 
 # ----------------------------------------------------------------------- #
 # Aliases 
 # ----------------------------------------------------------------------- #
 source ~/.dotfiles/zsh/.aliases
-
 
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

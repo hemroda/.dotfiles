@@ -4,7 +4,12 @@ else
   echo "Setting up your MACOS"
   echo "---------------------"
 
-  echo "Installing Stow"
+  echo "Installing Homebrew"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+  echo "Installing Stow & co using Homebrew"
+  echo "---------------------"
   brew install stow
   brew install rbenv
   brew install nvm
@@ -13,8 +18,11 @@ else
   brew install zsh-syntax-highlighting
   brew install zsh-autosuggestions
 
+  echo "Installing Ruby 2.6.6 & Node 14.17.0"
   rbenv install 2.6.6
   nvm install 14.17.0
+
+  mkdir ~/.vim
 fi
 
 stow git
@@ -24,4 +32,3 @@ stow zsh
 stow ruby
 
 mkdir ~/Sites
-
