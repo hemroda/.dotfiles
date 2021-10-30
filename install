@@ -16,6 +16,9 @@ else
   brew install mysql
   brew install nvim
   brew install vv
+  brew install imagemagick
+  brew install cmake
+  brew install openssl
   brew install zsh-syntax-highlighting
   brew install zsh-autosuggestions
 
@@ -33,3 +36,5 @@ stow zsh
 stow ruby
 
 mkdir ~/Sites
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
