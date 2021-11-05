@@ -11,30 +11,19 @@ else
   echo "Installing Stow & co using Homebrew"
   echo "---------------------"
   brew install stow
-  brew install rbenv
-  brew install nvm
-  brew install mysql
-  brew install nvim
+  brew install asdf
+  brew install postgresql
   brew install vv
   brew install imagemagick
   brew install cmake
   brew install openssl
-  brew install zsh-syntax-highlighting
-  brew install zsh-autosuggestions
-
-  echo "Installing Ruby 2.6.6 & Node 14.17.0"
-  rbenv install 2.6.6
-  nvm install 14.17.0
 
   mkdir ~/.vim
 fi
 
 stow git
-stow nvim
 stow vim
 stow zsh
 stow ruby
 
 mkdir ~/Sites
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
