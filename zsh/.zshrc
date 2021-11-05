@@ -15,17 +15,16 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rbenv zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
+
 
 # ----------------------------------------------------------------------- #
 # EXPORTS
 # ----------------------------------------------------------------------- #
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
-export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 # For compilers to find openssl@1.1:
 export LDFLAGS="-L/usr/local/opt/openssl@3/lib"
@@ -34,21 +33,15 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
 export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 
 # ----------------------------------------------------------------------- #
 # Aliases 
 # ----------------------------------------------------------------------- #
 source ~/.dotfiles/zsh/.aliases
 
-# Rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
 
 
 # Set list of themes to pick from when loading at random
