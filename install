@@ -17,6 +17,8 @@ else
   brew install imagemagick
   brew install cmake
   brew install openssl
+  brew install gpg
+  brew install gawk
 
   mkdir ~/.vim
 fi
