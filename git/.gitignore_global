@@ -26,3 +26,5 @@ tags
 .history
 
 autoload/*
+
+.DS_Store
