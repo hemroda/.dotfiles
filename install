@@ -11,6 +11,7 @@ else
   echo "Installing Stow & co using Homebrew"
   echo "---------------------"
   brew install stow
+  brew install kitty
   brew install asdf
   brew install postgresql
   brew install vv
@@ -27,5 +28,6 @@ stow git
 stow vim
 stow zsh
 stow ruby
+stow config " nvim, iterm2, kitty
 
 mkdir ~/Sites
