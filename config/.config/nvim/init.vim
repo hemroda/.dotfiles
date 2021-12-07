@@ -1,38 +1,5 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Pluggins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $HOME/.config/nvim/plugins.vim
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Remap Keys
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ','			                                      " Setting leader key to comma
-nmap <leader>sv :source ~/.config/nvim/init.vim<CR>
-nmap ,ev :tabedit ~/.config/nvim/init.vim<CR>		              " Open vimrc file in new buffer for quick edit
-nmap ,ep :tabedit ~/.config/nvim/plugins.vim<CR>              " Open vimrc file in new buffer for quick edit
-nmap ,b :Buffers<CR>
-
-" ================= Split Opening Commands ====================
-nnoremap <leader>h :split<space>
-nnoremap <leader>v :vsplit<space>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Theme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on
-set termguicolors
-set background=dark
-colorscheme nightfly " tokyonight
-
-" specific options for tokyonight
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
@@ -61,9 +28,9 @@ nmap <C-L> <C-W><C-L>
 " ========================= Search ============================
 set incsearch       				               " Find the next match as we type the search
 set hlsearch        				               " Highlight searches by default
-set ignorecase    			                       " Ignore case when searching...
+set ignorecase    			                   " Ignore case when searching...
 set smartcase       				               " ...unless we type a capital
-nmap <leader><space> :nohlsearch<cr>		               " Add simple highlight removal after search.
+nmap <leader><space> :nohlsearch<cr>		   " Add simple highlight removal after search.
 
 
 " ================ Turn Off Swap Files ==============
@@ -90,11 +57,86 @@ set linebreak    				                                      " Wrap lines at conve
 nmap <Tab> >>
 nmap <S-tab> <<
 
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins Config
+" => Remap Keys
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ','			                                      " Setting leader key to comma
+nmap <leader>sv :source ~/.config/nvim/init.vim<CR>
+nmap ,ev :tabedit ~/.config/nvim/init.vim<CR>		              " Open vimrc file in new buffer for quick edit
+nmap ,b :Buffers<CR>
+
+" ================= Split Opening Commands ====================
+nnoremap <leader>h :split<space>
+nnoremap <leader>v :vsplit<space>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Pluggins & their configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  "autocmd VimEnter * PlugInstall
+  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.config/nvim/autoload/plugged')
+
+  source ~/.config/nvim/plugins/fzf.vim
+  source ~/.config/nvim/plugins/floaterm.vim
+
+  " Theme
+  Plug 'hifarit53/tokyonight-vim'
+  Plug 'bluz71/vim-nightfly-guicolors'
+  Plug 'vim-airline/vim-airline'
+  Plug 'kien/rainbow_parentheses.vim'
+  Plug 'Yggdroot/indentLine'
+
+  " Git
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+
+  " Ruby
+  Plug 'tpope/vim-endwise'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'tpope/vim-rails'
+
+  " Searching
+  Plug 'preservim/nerdtree'
+
+  " Helpful tools
+  Plug 'tpope/vim-commentary'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'alvan/vim-closetag'
+  Plug 'tpope/vim-surround'
+
+call plug#end()
+
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+set termguicolors
+set background=dark
+colorscheme nightfly " tokyonight
+
+" specific options for tokyonight
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
 
 " ============================ NerdTree =======================
 nmap <leader>gs :G<CR>                                        " Opens Git status
@@ -108,21 +150,21 @@ nnoremap <C-i> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1                                      " Show dotfiles i.e hidden files
 
 " ============================== FZF ==========================
-map <leader>p :Files<CR>
-map <leader>f :GFiles<CR>
-map <leader>b :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>T :Tags<CR>
-nnoremap <leader>m :Marks<CR>
+" map <leader>p :Files<CR>
+" map <leader>f :GFiles<CR>
+" map <leader>b :Buffers<CR>
+" nnoremap <leader>g :Rg<CR>
+" nnoremap <leader>T :Tags<CR>
+" nnoremap <leader>m :Marks<CR>
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
-let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+" let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
+" let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 
-" Make Ripgrep ONLY search file contents and not filenames
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
+" " Make Ripgrep ONLY search file contents and not filenames
+" command! -bang -nargs=* Rg
+"   \ call fzf#vim#grep(
+"   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+"   \   fzf#vim#with_preview(), <bang>0)
 
 
 "" command! -bang -nargs=* Rg

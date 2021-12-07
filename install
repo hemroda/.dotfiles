@@ -20,6 +20,7 @@ else
   brew install openssl
   brew install gpg
   brew install gawk
+  brew install ripgrep
 
   mkdir ~/.vim
 fi
