@@ -22,6 +22,7 @@ else
   brew install gpg
   brew install gawk
   brew install ripgrep
+  brew install rbenv ruby-build
 
   mkdir ~/.vim
 fi
@@ -35,3 +36,4 @@ stow config
 
 mkdir ~/Sites
 brew services restart postgresql
+eval "$(/opt/homebrew/bin/brew shellenv)"
