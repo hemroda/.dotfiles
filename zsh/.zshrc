@@ -56,3 +56,4 @@ else
   export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
 fi
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
