@@ -5,16 +5,18 @@ else
   echo "---------------------"
 
   echo "Installing Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+  echo "Install ohmyzsh"
+  # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   echo "Installing Stow & co using Homebrew"
   echo "---------------------"
   brew install stow
   brew install kitty
   brew install asdf
+  brew install neovim
   brew install postgresql
-  brew install vv
   brew install imagemagick
   brew install cmake
   brew install openssl
@@ -27,8 +29,10 @@ fi
 
 stow git
 stow vim
+mv ~/.zshrc ~/.zshrc_old
 stow zsh
 stow ruby
-stow config " nvim, iterm2, kitty
+stow config
 
 mkdir ~/Sites
+brew services restart postgresql
