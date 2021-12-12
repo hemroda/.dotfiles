@@ -18,7 +18,7 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf)
+plugins=(git rbenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,9 +45,6 @@ if [ "$(uname -p)" = "i386" ]; then
   export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
   export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
-
-  # asdf
-  . /usr/local/opt/asdf/libexec/asdf.sh
 else
   echo "Running in ARM mode (M1)"
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -59,4 +56,3 @@ else
   export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
 fi
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
