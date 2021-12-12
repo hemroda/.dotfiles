@@ -23,7 +23,9 @@ else
   brew install gawk
   brew install ripgrep
   brew install rbenv ruby-build
+  brew install nvm
 
+  mkdir ~/.nvm
   mkdir ~/.vim
 fi
 
@@ -37,3 +39,5 @@ stow config
 mkdir ~/Sites
 brew services restart postgresql
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+nvm install 16.13.1
