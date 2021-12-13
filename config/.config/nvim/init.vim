@@ -1,5 +1,49 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Remap Keys
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ','			                                      " Setting leader key to comma
+nmap <leader>sv :source ~/.config/nvim/init.vim<CR>
+nmap <leader>ev :tabedit ~/.config/nvim/init.vim<CR>		      " Open vimrc file in new buffer for quick edit
+nmap <leader>b :Buffers<CR>
+nmap <leader>q :q<CR>
+nmap <leader>s :w<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Pluggins & their configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  "autocmd VimEnter * PlugInstall
+  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.config/nvim/autoload/plugged')
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'tpope/vim-commentary'
+  Plug 'airblade/vim-gitgutter'
+  source ~/.config/nvim/plugins/vim-maximizer.vim
+  source ~/.config/nvim/plugins/floaterm.vim
+  source ~/.config/nvim/plugins/fzf.vim
+  source ~/.config/nvim/plugins/vim-fugitive.vim
+  source ~/.config/nvim/plugins/statusline.vim
+  source ~/.config/nvim/plugins/netrw.vim
+call plug#end()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+set termguicolors
+set background=dark
+colorscheme codedark
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
@@ -9,6 +53,11 @@ set cursorline                                                " Enable highlight
 set autoread                    		                          " Reload files changed outside vim
 set autowriteall  					                                  " Automatically write the file when switching buffers
 set updatetime=100
+set completeopt=menuone,noinsert,noselect
+set mouse=a
+set diffopt+=vertical
+set hidden
+set cmdheight=1
 
 " ===================== Show whitespaces ======================
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -19,24 +68,15 @@ match ExtraWhitespace /\s\+$/
 set splitright
 set splitbelow
 
-" How to navigate btw the splits
+" How to navigate between the splits
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
-" ========================= Search ============================
-set incsearch       				               " Find the next match as we type the search
-set hlsearch        				               " Highlight searches by default
-set ignorecase    			                   " Ignore case when searching...
-set smartcase       				               " ...unless we type a capital
-nmap <leader><space> :nohlsearch<cr>		   " Add simple highlight removal after search.
-
-
-" ================ Turn Off Swap Files ==============
-set noswapfile
-set nobackup
-set nowb
+" Split Opening Commands
+nnoremap <leader>hs :split<space>
+nnoremap <leader>vs :vsplit<space>
 
 " ====================== Indentation =========================
 set autoindent
@@ -53,7 +93,7 @@ filetype indent on
 set list listchars=tab:\ \ ,trail:·		                        " Display tabs and trailing spaces visually
 set linebreak    				                                      " Wrap lines at convenient points
 
-" indent/unindent with tab/shift-tab
+" Indent/unindent with tab/shift-tab
 nmap <Tab> >>
 nmap <S-tab> <<
 
@@ -61,122 +101,16 @@ nmap <S-tab> <<
 vnoremap < <gv
 vnoremap > >gv
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Remap Keys
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ','			                                      " Setting leader key to comma
-nmap <leader>sv :source ~/.config/nvim/init.vim<CR>
-nmap ,ev :tabedit ~/.config/nvim/init.vim<CR>		              " Open vimrc file in new buffer for quick edit
-nmap ,b :Buffers<CR>
-
-" ================= Split Opening Commands ====================
-nnoremap <leader>h :split<space>
-nnoremap <leader>v :vsplit<space>
+" ========================= Search ============================
+set incsearch       				                                  " Find the next match as we type the search
+set hlsearch        				                                  " Highlight searches by default
+set ignorecase    			                                      " Ignore case when searching...
+set smartcase       				                                  " ...unless we type a capital
+nmap <leader><space> :nohlsearch<cr>		                      " Add simple highlight removal after search.
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Pluggins & their configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" auto-install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
+" =================== Turn Off Swap Files ====================
+set noswapfile
+set nobackup
+set nowb
 
-call plug#begin('~/.config/nvim/autoload/plugged')
-
-  source ~/.config/nvim/plugins/fzf.vim
-  source ~/.config/nvim/plugins/floaterm.vim
-
-  " Theme
-  Plug 'hifarit53/tokyonight-vim'
-  Plug 'bluz71/vim-nightfly-guicolors'
-  Plug 'vim-airline/vim-airline'
-  Plug 'kien/rainbow_parentheses.vim'
-  Plug 'Yggdroot/indentLine'
-
-  " Git
-  Plug 'tpope/vim-fugitive'
-  Plug 'airblade/vim-gitgutter'
-
-  " Ruby
-  Plug 'tpope/vim-endwise'
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'tpope/vim-rails'
-
-  " Searching
-  Plug 'preservim/nerdtree'
-
-  " Helpful tools
-  Plug 'tpope/vim-commentary'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'alvan/vim-closetag'
-  Plug 'tpope/vim-surround'
-
-call plug#end()
-
-" Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Theme
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on
-set termguicolors
-set background=dark
-colorscheme nightfly " tokyonight
-
-" specific options for tokyonight
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-
-
-" ============================ NerdTree =======================
-nmap <leader>gs :G<CR>                                        " Opens Git status
-
-" ============================ NerdTree =======================
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-i> :NERDTreeFind<CR>
-
-let NERDTreeShowHidden=1                                      " Show dotfiles i.e hidden files
-
-" ============================== FZF ==========================
-" map <leader>p :Files<CR>
-" map <leader>f :GFiles<CR>
-" map <leader>b :Buffers<CR>
-" nnoremap <leader>g :Rg<CR>
-" nnoremap <leader>T :Tags<CR>
-" nnoremap <leader>m :Marks<CR>
-
-" let $FZF_DEFAULT_OPTS = '--layout=reverse --inline-info'
-" let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
-
-" " Make Ripgrep ONLY search file contents and not filenames
-" command! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-"   \   fzf#vim#with_preview(), <bang>0)
-
-
-"" command! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --hidden --smart-case --no-heading --color=always '.shellescape(<q-args>), 1,
-"   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-"   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4.. -e'}, 'right:50%', '?'),
-"   \   <bang>0)" Make Ripgrep ONLY search file contents and not filenames
-
-
-" ===================== Rainbow Parentheses ===================
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
