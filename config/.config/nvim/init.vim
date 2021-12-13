@@ -22,15 +22,28 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-  Plug 'tomasiser/vim-code-dark'
-  Plug 'tpope/vim-commentary'
-  Plug 'airblade/vim-gitgutter'
-  source ~/.config/nvim/plugins/vim-maximizer.vim
-  source ~/.config/nvim/plugins/floaterm.vim
+  " Search
   source ~/.config/nvim/plugins/fzf.vim
+  " Git
+  Plug 'airblade/vim-gitgutter'
   source ~/.config/nvim/plugins/vim-fugitive.vim
+  " Ruby
+  Plug 'tpope/vim-endwise'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'tpope/vim-rails'
+  " Theme
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'Yggdroot/indentLine'
+  source ~/.config/nvim/plugins/rainbow-parentheses.vim
   source ~/.config/nvim/plugins/statusline.vim
   source ~/.config/nvim/plugins/netrw.vim
+  " Helpful tools
+  Plug 'tpope/vim-commentary'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'alvan/vim-closetag'
+  Plug 'tpope/vim-surround'
+  source ~/.config/nvim/plugins/vim-maximizer.vim
+  source ~/.config/nvim/plugins/floaterm.vim
 call plug#end()
 
 
@@ -113,4 +126,3 @@ nmap <leader><space> :nohlsearch<cr>		                      " Add simple highlig
 set noswapfile
 set nobackup
 set nowb
-
