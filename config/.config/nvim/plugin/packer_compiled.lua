@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/hemroda/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/hemroda/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/hemroda/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
