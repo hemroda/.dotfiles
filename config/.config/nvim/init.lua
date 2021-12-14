@@ -4,13 +4,14 @@ local opt = vim.opt
 local api = vim.api
 local map = vim.api.nvim_set_keymap
 
--- 
+ 
 -- ------------------------------------------------------
 -- Plugins management via Packer
 -- ------------------------------------------------------
 require("plugins")
 
 require('nvim_comment').setup()
+require('lualine').setup()
 
 -- ------------------------------------------------------
 -- Keymaps
@@ -18,6 +19,10 @@ require('nvim_comment').setup()
 g.mapleader = ',' -- change the <leader> key to be comma
 map('n', '<leader>ev', ':e $MYVIMRC<CR>', {noremap = true, silent = false})
 map('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', {noremap = true, silent = false})
+map('n', '<leader>sv', ':source $MYVIMRC<CR>', {noremap = true, silent = false})
+map('n', '<leader>q', ':q<CR>', {noremap = true, silent = false})
+map('n', '<leader>Q', ':q!<CR>', {noremap = true, silent = false})
+map('n', '<leader>s', ':w<CR>', {noremap = true, silent = false})
 -- split navigation
 map('n', '<C-h>', '<C-w>h', {noremap = true, silent = false})
 map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
@@ -29,6 +34,15 @@ map('i', 'kj', '<ESC>', {noremap = true, silent = false})
 -- indenting
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
+-- After searching, pressing escape stops the highlight
+map("n", "<esc>", ":noh<cr>", { silent = true })
+-- Keep search results centred
+map("n", "n", "nzzzv", {noremap = true, silent = false})
+map("n", "N", "Nzzzv", {noremap = true, silent = false})
+map("n", "J", "mzJ`z", {noremap = true, silent = false})
+-- Tab to switch buffers in Normal mode
+map("n", "<Tab>", ":bnext<CR>", {noremap = true, silent = false})
+map("n", "<S-Tab>", ":bprevious<CR>", {noremap = true, silent = false})
 
 -- ------------------------------------------------------
 -- Global Settings
