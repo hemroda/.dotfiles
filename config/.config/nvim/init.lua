@@ -4,13 +4,18 @@ local opt = vim.opt
 local api = vim.api
 local map = vim.api.nvim_set_keymap
 
--- Plugin management via Packer
+-- 
+-- ------------------------------------------------------
+-- Plugins management via Packer
+-- ------------------------------------------------------
 require("plugins")
 
---[[
-	Keymaps
---]]
-g.mapleader = ','           -- change the <leader> key to be comma
+require('nvim_comment').setup()
+
+-- ------------------------------------------------------
+-- Keymaps
+-- ------------------------------------------------------
+g.mapleader = ',' -- change the <leader> key to be comma
 map('n', '<leader>ev', ':e $MYVIMRC<CR>', {noremap = true, silent = false})
 map('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', {noremap = true, silent = false})
 -- split navigation
@@ -25,9 +30,9 @@ map('i', 'kj', '<ESC>', {noremap = true, silent = false})
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
 
---[[
-	Global Settings	
---]]
+-- ------------------------------------------------------
+-- Global Settings
+-- ------------------------------------------------------
 cmd('filetype plugin indent on')
 opt.backup = false
 opt.completeopt = { 'menu', 'menuone', 'noselect' }
