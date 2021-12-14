@@ -1,14 +1,12 @@
 local cmd = vim.cmd
 local g = vim.g
 local opt = vim.opt
-local api = vim.api
-local map = vim.api.nvim_set_keymap
-
- 
 -- ------------------------------------------------------
 -- Plugins management via Packer
 -- ------------------------------------------------------
 require("plugins")
+
+vim.cmd [[colorscheme codedark]]
 
 require('nvim_comment').setup()
 require('lualine').setup()
@@ -25,42 +23,80 @@ require('nvim-treesitter.configs').setup {
 -- This folding setting will respect your foldminlines and foldnestmax settings.
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+  local opts = {}
+  if server.name == "sumneko_lua" then
+    opts = {
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim', 'use' }
+          },
+        }
+      }
+    }
+  end
+  server:setup(opts)
+end)
 
 -- ------------------------------------------------------
 -- Keymaps
 -- ------------------------------------------------------
 g.mapleader = ',' -- change the <leader> key to be comma
-map('n', '<leader>ev', ':e $MYVIMRC<CR>', {noremap = true, silent = false})
-map('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', {noremap = true, silent = false})
-map('n', '<leader>sv', ':source $MYVIMRC<CR>', {noremap = true, silent = false})
-map('n', '<leader>q', ':q<CR>', {noremap = true, silent = false})
-map('n', '<leader>Q', ':q!<CR>', {noremap = true, silent = false})
-map('n', '<leader>s', ':w<CR>', {noremap = true, silent = false})
+
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = false }
+
+local function nkeymap(key, map)
+  keymap('n', key, map, opts)
+end
+
+keymap('n', '<leader>ev', ':e $MYVIMRC<CR>', opts)
+keymap('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', opts)
+keymap('n', '<leader>sv', ':source $MYVIMRC<CR>', opts)
+keymap('n', '<leader>q', ':q<CR>', opts)
+keymap('n', '<leader>Q', ':q!<CR>', opts)
+keymap('n', '<leader>s', ':w<CR>', opts)
+keymap('n', '<c-s>', ':w<CR>', {})
+keymap('i', '<c-s>', '<Esc>:w<CR>a', {})
+
 -- split navigation
-map('n', '<C-h>', '<C-w>h', {noremap = true, silent = false})
-map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
-map('n', '<C-j>', '<C-w>j', {noremap = true, silent = false})
-map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
+keymap('n', '<C-h>', '<C-w>h', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
+keymap('n', '<C-j>', '<C-w>j', opts)
+keymap('n', '<C-k>', '<C-w>k', opts)
 -- escaping
-map('i', 'jk', '<ESC>', {noremap = true, silent = false})
-map('i', 'kj', '<ESC>', {noremap = true, silent = false})
+keymap('i', 'jk', '<ESC>', opts)
+keymap('i', 'kj', '<ESC>', opts)
 -- indenting
-map('v', '<', '<gv', {noremap = true, silent = false})
-map('v', '>', '>gv', {noremap = true, silent = false})
+keymap('v', '<', '<gv', opts)
+keymap('v', '>', '>gv', opts)
 -- After searching, pressing escape stops the highlight
-map("n", "<esc>", ":noh<cr>", { silent = true })
+keymap("n", "<esc>", ":noh<cr>", { silent = true })
 -- Keep search results centred
-map("n", "n", "nzzzv", {noremap = true, silent = false})
-map("n", "N", "Nzzzv", {noremap = true, silent = false})
-map("n", "J", "mzJ`z", {noremap = true, silent = false})
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+keymap("n", "J", "mzJ`z", opts)
 -- Tab to switch buffers in Normal mode
-map("n", "<Tab>", ":bnext<CR>", {noremap = true, silent = false})
-map("n", "<S-Tab>", ":bprevious<CR>", {noremap = true, silent = false})
+keymap("n", "<Tab>", ":bnext<CR>", opts)
+keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- Telescope
-map("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>', {noremap = true, silent = false})
-map('n', '<leader>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>', {noremap = true, silent = false})
-map('n', '<leader>b', '<cmd>lua require("telescope.builtin").buffers()<cr>', {noremap = true, silent = false})
+keymap("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
+keymap('n', '<leader>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
+keymap('n', '<leader>b', '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
+-- LSP
+nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
+nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')
+nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>')
+nkeymap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
+nkeymap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
+nkeymap('gr', ':lua vim.lsp.buf.references()<cr>')
+nkeymap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
+nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
+nkeymap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
+nkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
+nkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 -- Renaming
 -- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 -- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
@@ -77,7 +113,7 @@ opt.encoding = 'UTF-8'
 opt.errorbells = false
 opt.fillchars = { vert = ' ' }
 opt.ignorecase = true
-opt.hidden = true  
+opt.hidden = true
 opt.hlsearch = true
 opt.listchars = { tab = ">>>", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
 opt.mouse = 'a'
