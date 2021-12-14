@@ -12,6 +12,7 @@ require("plugins")
 
 require('nvim_comment').setup()
 require('lualine').setup()
+require('telescope').setup()
 
 -- ------------------------------------------------------
 -- Keymaps
@@ -43,6 +44,14 @@ map("n", "J", "mzJ`z", {noremap = true, silent = false})
 -- Tab to switch buffers in Normal mode
 map("n", "<Tab>", ":bnext<CR>", {noremap = true, silent = false})
 map("n", "<S-Tab>", ":bprevious<CR>", {noremap = true, silent = false})
+-- Telescope
+map("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>', {noremap = true, silent = false})
+map('n', '<leader>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>', {noremap = true, silent = false})
+map('n', '<leader>b', '<cmd>lua require("telescope.builtin").buffers()<cr>', {noremap = true, silent = false})
+-- Renaming
+-- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+-- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+-- map("v", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 
 -- ------------------------------------------------------
 -- Global Settings
