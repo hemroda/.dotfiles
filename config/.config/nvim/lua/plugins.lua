@@ -1,0 +1,1 @@
+print('File: nvim/lua/plugins.lua')
