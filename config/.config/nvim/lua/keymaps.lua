@@ -16,6 +16,7 @@ end
 
 map('n', '<leader>ev', ':tabedit $MYVIMRC<CR>', opts)
 map('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', opts)
+map('n', '<leader>ek', ':tabedit ~/.config/nvim/lua/keymaps.lua<CR>', opts)
 map('n', '<leader>sv', ':source $MYVIMRC<CR>', opts)
 map('n', '<leader>q', ':q<CR>', opts)
 map('n', '<leader>Q', ':q!<CR>', opts)
@@ -64,6 +65,23 @@ map('n', '<c-n>', ':Alpha<cr>', opts)
 map('n', '<leader>t', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>tr', ':NvimTreeRefresh<CR>', opts)
 map('n', '<leader>tf', ':NvimTreeFindFile<CR>', opts)
+-- Buffer
+-- Re-order to previous/next
+map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
+map('n', '<A->>', ' :BufferMoveNext<CR>', opts)
+-- Goto buffer in position...
+map('n', '<A-1>', ':BufferGoto 1<CR>', opts)
+map('n', '<A-2>', ':BufferGoto 2<CR>', opts)
+map('n', '<A-3>', ':BufferGoto 3<CR>', opts)
+map('n', '<A-4>', ':BufferGoto 4<CR>', opts)
+map('n', '<A-5>', ':BufferGoto 5<CR>', opts)
+map('n', '<A-6>', ':BufferGoto 6<CR>', opts)
+map('n', '<A-7>', ':BufferGoto 7<CR>', opts)
+map('n', '<A-8>', ':BufferGoto 8<CR>', opts)
+map('n', '<A-9>', ':BufferGoto 9<CR>', opts)
+map('n', '<A-0>', ':BufferLast<CR>', opts)
+-- Close buffer
+map('n', '<A-w>', ':BufferClose<CR>', opts)
 -- Renaming
 -- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 -- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
