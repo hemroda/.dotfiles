@@ -2,20 +2,22 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
+    use "nvim-treesitter/nvim-treesitter"
+    -- Themes
     use "tomasiser/vim-code-dark"
     use 'tomasr/molokai'
-    
-    use "terrortylor/nvim-comment"
     use "kyazdani42/nvim-web-devicons"
     use {
       "nvim-lualine/lualine.nvim",
       requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
+    -- Searches
     use {
       "nvim-telescope/telescope.nvim",
       requires = { {"nvim-lua/plenary.nvim"} }
     }
-    use "nvim-treesitter/nvim-treesitter"
+    -- Tools
+    use "terrortylor/nvim-comment"
     -- LSP
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
@@ -25,4 +27,4 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
-end)  
+end)

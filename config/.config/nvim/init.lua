@@ -120,8 +120,8 @@ g.mapleader = ',' -- change the <leader> key to be comma
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = false }
 
-local function nmap(key, map)
-  map('n', key, map, opts)
+local function nmap(key, mapped_to)
+  map('n', key, mapped_to, opts)
 end
 
 map('n', '<leader>ev', ':e $MYVIMRC<CR>', opts)
