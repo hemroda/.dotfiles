@@ -9,7 +9,7 @@ alias cport="sudo lsof -nP -iTCP:1025 -sTCP:LISTEN"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias mzsh="arch -arm64 zsh"
 alias izsh="arch -x86_64 zsh"
-alias nvp="nvim ."
+alias vi="nvim"
 
 # Navigation
 alias d="cd ~/.dotfiles"

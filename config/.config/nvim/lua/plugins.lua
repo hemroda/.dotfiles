@@ -14,10 +14,14 @@ return require('packer').startup(function()
     -- Searches
     use {
       "nvim-telescope/telescope.nvim",
-      requires = { {"nvim-lua/plenary.nvim"} }
+      requires = {"nvim-lua/plenary.nvim"} 
     }
     -- Tools
     use "terrortylor/nvim-comment"
+    use {
+      "goolord/alpha-nvim",
+      requires = {"kyazdani42/nvim-web-devicons"}
+    }
     -- LSP
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
