@@ -20,6 +20,17 @@ require('nvim-treesitter.configs').setup {
     enable = true,
   }
 }
+
+-- Startify
+require('alpha').setup(require('alpha.themes.startify').opts)
+local startify = require("alpha.themes.startify")
+startify.section.mru_cwd.val = { { type = "padding", val = 0 } }
+startify.section.bottom_buttons.val = {
+  startify.button("v", "neovim config", ":e ~/.config/nvim/init.lua<cr>"),
+  startify.button("q", "quit nvim", ":qa<cr>"),
+}
+
+
 -- Treesitter
 -- This folding setting will respect your foldminlines and foldnestmax settings.
 vim.opt.foldmethod = "expr"
@@ -111,7 +122,6 @@ for _, server in ipairs(langservers) do
 end
 
 
-
 -- ------------------------------------------------------
 -- Keymaps
 -- ------------------------------------------------------
@@ -169,6 +179,8 @@ nmap('K', ':lua vim.lsp.buf.hover()<cr>')
 nmap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
 nmap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
 nmap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
+-- Startify
+map('n', '<c-n>', ':Alpha<cr>', opts)
 -- Renaming
 -- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 -- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
