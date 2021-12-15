@@ -8,6 +8,7 @@ require("plugins")
 
 vim.cmd [[colorscheme codedark]]
 
+require('plugins.nvim-tree')
 require('nvim_comment').setup()
 require('lualine').setup()
 require('telescope').setup()
@@ -134,7 +135,7 @@ local function nmap(key, mapped_to)
   map('n', key, mapped_to, opts)
 end
 
-map('n', '<leader>ev', ':e $MYVIMRC<CR>', opts)
+map('n', '<leader>ev', ':tabedit $MYVIMRC<CR>', opts)
 map('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', opts)
 map('n', '<leader>sv', ':source $MYVIMRC<CR>', opts)
 map('n', '<leader>q', ':q<CR>', opts)
@@ -142,7 +143,6 @@ map('n', '<leader>Q', ':q!<CR>', opts)
 map('n', '<leader>s', ':w<CR>', opts)
 map('n', '<c-s>', ':w<CR>', {})
 map('i', '<c-s>', '<Esc>:w<CR>a', {})
-
 -- split navigation
 map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-l>', '<C-w>l', opts)
@@ -181,6 +181,10 @@ nmap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
 nmap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 -- Startify
 map('n', '<c-n>', ':Alpha<cr>', opts)
+-- :NvimTree
+map('n', '<leader>t', ':NvimTreeToggle<CR>', opts)
+map('n', '<leader>tr', ':NvimTreeRefresh<CR>', opts)
+map('n', '<leader>tf', ':NvimTreeFindFile<CR>', opts)
 -- Renaming
 -- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 -- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
@@ -215,6 +219,7 @@ opt.textwidth = 0 -- never wrap lines
 opt.undolevels = 1000
 opt.writebackup = false -- no tilde files
 opt.wrapscan = true	-- wrap searches around top/bottom of file
+opt.termguicolors = true            -- True color support
 
 -- Buffer
 local indent = 2
