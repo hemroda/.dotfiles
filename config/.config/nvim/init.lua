@@ -1,4 +1,3 @@
-local cmd = vim.cmd
 
 require('global-settings')
 require('keymaps')
@@ -23,9 +22,5 @@ require('lualine').setup()
 require('nvim-ts-autotag').setup({
   filetypes = { 'html', 'javascript', 'javascriptreact', 'typescriptreact', 'erb', 'vue' },
 })
-autotag = {
-  enable = true,
-  
-},
 
 vim.cmd [[colorscheme codedark]]

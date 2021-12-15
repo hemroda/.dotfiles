@@ -9,6 +9,7 @@ return require('packer').startup(function()
     use 'tomasr/molokai'
     use "kyazdani42/nvim-web-devicons"
     use {"nvim-lualine/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons", opt = true}}
+    use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
     -- For indent line
     use 'lukas-reineke/indent-blankline.nvim'
     -- Searching files and in them easily
