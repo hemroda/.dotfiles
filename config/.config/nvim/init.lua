@@ -117,58 +117,58 @@ end
 -- ------------------------------------------------------
 g.mapleader = ',' -- change the <leader> key to be comma
 
-local keymap = vim.api.nvim_set_keymap
+local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = false }
 
-local function nkeymap(key, map)
-  keymap('n', key, map, opts)
+local function nmap(key, map)
+  map('n', key, map, opts)
 end
 
-keymap('n', '<leader>ev', ':e $MYVIMRC<CR>', opts)
-keymap('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', opts)
-keymap('n', '<leader>sv', ':source $MYVIMRC<CR>', opts)
-keymap('n', '<leader>q', ':q<CR>', opts)
-keymap('n', '<leader>Q', ':q!<CR>', opts)
-keymap('n', '<leader>s', ':w<CR>', opts)
-keymap('n', '<c-s>', ':w<CR>', {})
-keymap('i', '<c-s>', '<Esc>:w<CR>a', {})
+map('n', '<leader>ev', ':e $MYVIMRC<CR>', opts)
+map('n', '<leader>ep', ':tabedit ~/.config/nvim/lua/plugins.lua<CR>', opts)
+map('n', '<leader>sv', ':source $MYVIMRC<CR>', opts)
+map('n', '<leader>q', ':q<CR>', opts)
+map('n', '<leader>Q', ':q!<CR>', opts)
+map('n', '<leader>s', ':w<CR>', opts)
+map('n', '<c-s>', ':w<CR>', {})
+map('i', '<c-s>', '<Esc>:w<CR>a', {})
 
 -- split navigation
-keymap('n', '<C-h>', '<C-w>h', opts)
-keymap('n', '<C-l>', '<C-w>l', opts)
-keymap('n', '<C-j>', '<C-w>j', opts)
-keymap('n', '<C-k>', '<C-w>k', opts)
+map('n', '<C-h>', '<C-w>h', opts)
+map('n', '<C-l>', '<C-w>l', opts)
+map('n', '<C-j>', '<C-w>j', opts)
+map('n', '<C-k>', '<C-w>k', opts)
 -- escaping
-keymap('i', 'jk', '<ESC>', opts)
-keymap('i', 'kj', '<ESC>', opts)
+map('i', 'jk', '<ESC>', opts)
+map('i', 'kj', '<ESC>', opts)
 -- indenting
-keymap('v', '<', '<gv', opts)
-keymap('v', '>', '>gv', opts)
+map('v', '<', '<gv', opts)
+map('v', '>', '>gv', opts)
 -- After searching, pressing escape stops the highlight
-keymap("n", "<esc>", ":noh<cr>", { silent = true })
+map("n", "<esc>", ":noh<cr>", { silent = true })
 -- Keep search results centred
-keymap("n", "n", "nzzzv", opts)
-keymap("n", "N", "Nzzzv", opts)
-keymap("n", "J", "mzJ`z", opts)
+map("n", "n", "nzzzv", opts)
+map("n", "N", "Nzzzv", opts)
+map("n", "J", "mzJ`z", opts)
 -- Tab to switch buffers in Normal mode
-keymap("n", "<Tab>", ":bnext<CR>", opts)
-keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
+map("n", "<Tab>", ":bnext<CR>", opts)
+map("n", "<S-Tab>", ":bprevious<CR>", opts)
 -- Telescope
-keymap("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
-keymap('n', '<leader>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
-keymap('n', '<leader>b', '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
+map("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
+map('n', '<leader>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
+map('n', '<leader>b', '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
 -- LSP
-nkeymap('gd', ':lua vim.lsp.buf.definition()<cr>')
-nkeymap('gD', ':lua vim.lsp.buf.declaration()<cr>')
-nkeymap('gi', ':lua vim.lsp.buf.implementation()<cr>')
-nkeymap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
-nkeymap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
-nkeymap('gr', ':lua vim.lsp.buf.references()<cr>')
-nkeymap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
-nkeymap('K', ':lua vim.lsp.buf.hover()<cr>')
-nkeymap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
-nkeymap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
-nkeymap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
+nmap('gd', ':lua vim.lsp.buf.definition()<cr>')
+nmap('gD', ':lua vim.lsp.buf.declaration()<cr>')
+nmap('gi', ':lua vim.lsp.buf.implementation()<cr>')
+nmap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
+nmap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
+nmap('gr', ':lua vim.lsp.buf.references()<cr>')
+nmap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
+nmap('K', ':lua vim.lsp.buf.hover()<cr>')
+nmap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
+nmap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
+nmap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 -- Renaming
 -- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 -- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
