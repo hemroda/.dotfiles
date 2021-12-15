@@ -28,6 +28,7 @@ return require('packer').startup(function()
       "goolord/alpha-nvim",
       requires = {"kyazdani42/nvim-web-devicons"}
     }
+    use 'voldikss/vim-floaterm'
     -- LSP
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
