@@ -20,5 +20,12 @@ require('plugins.indentline')
 require('nvim-web-devicons').get_icons()
 require('nvim_comment').setup()
 require('lualine').setup()
+require('nvim-ts-autotag').setup({
+  filetypes = { 'html', 'javascript', 'javascriptreact', 'typescriptreact', 'erb', 'vue' },
+})
+autotag = {
+  enable = true,
+  
+},
 
 vim.cmd [[colorscheme codedark]]
