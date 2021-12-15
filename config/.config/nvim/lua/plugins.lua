@@ -22,7 +22,8 @@ return require('packer').startup(function()
     -- Provide git info
     use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
     use {'p00f/nvim-ts-rainbow', after = "nvim-treesitter"}
-    use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
+    -- use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
+    use 'windwp/nvim-ts-autotag'
     -- Auto pairs '', "", [], {}, (), ``
     use 'windwp/nvim-autopairs'
     -- Collection of configurations for built-in LSP client

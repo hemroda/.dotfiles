@@ -6,10 +6,6 @@ require('nvim-treesitter.configs').setup {
   indent = {
     enable = true,
   },
-  autotag = {
-    enable = true,
-    filetypes = { 'html', 'javascript', 'javascriptreact', 'typescriptreact', 'erb', 'vue' },
-  },
   rainbow = {
     enable = true,
     extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
