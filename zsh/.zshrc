@@ -50,10 +50,8 @@ else
   eval "$(/opt/homebrew/bin/brew shellenv)"
   alias brew='/opt/homebrew/bin/brew'
 
-  export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
-  export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
-  export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+  export CFLAGS="-Wno-error=implicit-function-declaration"
+  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --with-zlib-dir=$(brew --prefix zlib)"
 fi
 
 
