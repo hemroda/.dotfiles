@@ -10,6 +10,7 @@ alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias mzsh="arch -arm64 zsh"
 alias izsh="arch -x86_64 zsh"
 alias vi="nvim"
+alias neovide="/Applications/Neovide.app/Contents/MacOS/neovide "
 
 # Navigation
 alias d="cd ~/.dotfiles"
