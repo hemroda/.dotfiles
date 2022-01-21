@@ -32,6 +32,8 @@ source ~/.dotfiles/zsh/.aliases
 # ----------------------------------------------------------------------- #
 # EXPORTS
 # ----------------------------------------------------------------------- #
+PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+
 if [ "$(uname -p)" = "i386" ]; then
   echo "Running in i386 mode (Rosetta)"
   eval "$(/usr/local/homebrew/bin/brew shellenv)"
