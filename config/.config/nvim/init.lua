@@ -1,20 +1,20 @@
-
-require("global-settings")
+-- ------------------------------------------------------
+-- Settings & Keymaps 
+-- ------------------------------------------------------
+require("global_settings")
 require("keymaps")
 
 -- ------------------------------------------------------
 -- Plugins management via Packer
 -- ------------------------------------------------------
 require("plugins")
-require("plugins.nvim-tree")
+require("plugins.lsp_config")
 require("plugins.telescope")
-require("plugins.nvim-treesitter")
-require("plugins.nvim-cmp")
-require("plugins.startify")
-require("plugins.lsp-config")
 require("plugins.floaterm")
 require("plugins.autopairs")
 require("plugins.gitsigns")
+require("plugins.nvim-tree")
+require("plugins.nvim-treesitter")
 require("plugins.indentline")
 require("nvim-web-devicons").get_icons()
 require("nvim_comment").setup()
