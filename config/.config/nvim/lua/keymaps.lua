@@ -60,11 +60,13 @@ nmap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
 nmap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
 nmap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 -- Startify
-map('n', '<c-n>', ':Alpha<cr>', opts)
+-- map('n', '<c-n>', ':Alpha<cr>', opts)
+
 -- :NvimTree
 map('n', '<leader>t', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>tr', ':NvimTreeRefresh<CR>', opts)
 map('n', '<leader>tf', ':NvimTreeFindFile<CR>', opts)
+
 -- Buffer
 -- Re-order to previous/next
 map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
@@ -82,6 +84,7 @@ map('n', '<A-9>', ':BufferGoto 9<CR>', opts)
 map('n', '<A-0>', ':BufferLast<CR>', opts)
 -- Close buffer
 map('n', '<A-w>', ':BufferClose<CR>', opts)
+
 -- Renaming
 -- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 -- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
