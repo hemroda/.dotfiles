@@ -71,6 +71,10 @@ return require("packer").startup(function()
     
     -- Collection of configurations for the built-in LSP client
     use "neovim/nvim-lspconfig" 
+
+    -- Rails
+    use "tpope/vim-rails" 
+    use "tpope/vim-endwise" 
   
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

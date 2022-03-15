@@ -151,10 +151,20 @@ _G.packer_plugins = {
     path = "/Users/hemroda/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
   },
+  ["vim-endwise"] = {
+    loaded = true,
+    path = "/Users/hemroda/.local/share/nvim/site/pack/packer/start/vim-endwise",
+    url = "https://github.com/tpope/vim-endwise"
+  },
   ["vim-floaterm"] = {
     loaded = true,
     path = "/Users/hemroda/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
+  },
+  ["vim-rails"] = {
+    loaded = true,
+    path = "/Users/hemroda/.local/share/nvim/site/pack/packer/start/vim-rails",
+    url = "https://github.com/tpope/vim-rails"
   }
 }
 
