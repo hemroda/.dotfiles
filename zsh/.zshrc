@@ -13,6 +13,8 @@ export ZSH="/Users/$USER/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="avit"
 
+ZSH_TMUX_AUTOSTART='true'
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -21,8 +23,6 @@ ZSH_THEME="avit"
 plugins=(git rbenv tmux)
 
 source $ZSH/oh-my-zsh.sh
-
-ZSH_TMUX_AUTOSTART='true'
 
 # ----------------------------------------------------------------------- #
 # Aliases

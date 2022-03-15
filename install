@@ -26,6 +26,7 @@ else
   brew install rbenv ruby-build
   brew install nvm
   brew install fzf
+  brew install tmux
 
   mkdir ~/.nvm
   mkdir ~/.vim
@@ -37,6 +38,7 @@ mv ~/.zshrc ~/.zshrc_old
 stow zsh
 stow ruby
 stow config
+stow tmux
 
 mkdir ~/Sites
 
