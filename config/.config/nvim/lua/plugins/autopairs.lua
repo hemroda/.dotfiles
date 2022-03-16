@@ -28,3 +28,5 @@ npairs.add_rules {
         end)
         :use_key(']')
 }
+
+npairs.add_rules(require('nvim-autopairs.rules.endwise-ruby'))

@@ -38,6 +38,7 @@ mv ~/.zshrc ~/.zshrc_old
 stow zsh
 stow ruby
 stow config
+stow vim_snippets
 stow tmux
 
 mkdir ~/Sites

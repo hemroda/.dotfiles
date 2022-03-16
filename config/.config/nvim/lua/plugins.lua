@@ -71,10 +71,23 @@ return require("packer").startup(function()
     
     -- Collection of configurations for the built-in LSP client
     use "neovim/nvim-lspconfig" 
+    -- Autocompletion plugin
+    use "hrsh7th/cmp-nvim-lsp"
+    -- For buffer completion
+    use "hrsh7th/cmp-buffer"
+    -- For path completion
+    use "hrsh7th/cmp-path"
+    -- Autocompletion plugin
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-cmdline"
+    -- Snippets
+    use "hrsh7th/cmp-vsnip"
+    use "hrsh7th/vim-vsnip"
 
     -- Rails
+    use "vim-ruby/vim-ruby"
+    use "RRethy/nvim-treesitter-endwise" 
     use "tpope/vim-rails" 
-    use "tpope/vim-endwise" 
   
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

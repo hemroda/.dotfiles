@@ -11,6 +11,7 @@ alias mzsh="arch -arm64 zsh"
 alias izsh="arch -x86_64 zsh"
 alias vi="nvim"
 alias neovide="/Applications/Neovide.app/Contents/MacOS/neovide "
+alias clean_packer="rm -rf ~/.local/share/nvim/site/pack/packer/start/*"
 
 # Navigation
 alias d="cd ~/.dotfiles"
