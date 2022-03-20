@@ -2,9 +2,6 @@ Dotfiles
 ===
 
 
-## MacOS
-
-
 #### Clone dotfiles repo
 `$ cd && git clone git@github.com:MikHM/.dotfiles.git`
 
