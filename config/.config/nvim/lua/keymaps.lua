@@ -83,8 +83,9 @@ map('n', '<A-8>', ':BufferGoto 8<CR>', opts)
 map('n', '<A-9>', ':BufferGoto 9<CR>', opts)
 map('n', '<A-0>', ':BufferLast<CR>', opts)
 -- Close buffer
-map('n', '<A-w>', ':BufferClose<CR>', opts)
-
+map('n', '<C-w>', ':BufferClose<CR>', opts)
+-- Snippets
+nmap('<leader>os', ':VsnipOpen<CR>', opts)
 -- Renaming
 -- map("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
 -- map("n", "<leader>cn", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })

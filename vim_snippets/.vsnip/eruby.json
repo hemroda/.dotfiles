@@ -55,6 +55,30 @@
       "<p>$1</p>"
     ]
   },
+  "th": {
+    "prefix": ["th"],
+    "body": [
+      "<th>$1</th>"
+    ]
+  },
+  "td": {
+    "prefix": ["td"],
+    "body": [
+      "<td>$1</td>"
+    ]
+  },
+  "tr": {
+    "prefix": ["tr"],
+    "body": [
+      "<tr>$1</tr>"
+    ]
+  },
+  "class": {
+    "prefix": ["class"],
+    "body": [
+      "class=\"$1\""
+    ]
+  },
   "XClass": {
     "prefix": ["xclass"],
     "body": [
