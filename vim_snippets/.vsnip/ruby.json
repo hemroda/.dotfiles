@@ -6,6 +6,20 @@
       "$1"
     ]
   },
+  "describe": {
+    "prefix": ["describe '' do end"],
+    "body": [
+      "describe '$1' do",
+      "end"
+    ]
+  },
+  "it": {
+    "prefix": ["it '' do end"],
+    "body": [
+      "it '$1' do",
+      "end"
+    ]
+  },
   "Class": {
     "prefix": ["class"],
     "body": [
