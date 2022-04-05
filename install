@@ -49,11 +49,16 @@ else
   brew install nvm
   brew install fzf
   brew install tmux
+  brew install redis
+  brew install yarn
+  brew tap homebrew/cask-fonts
+  brew install --cask font-hack-nerd-font
 
   mkdir ~/.nvm
   mkdir ~/.vim
 
   brew services restart postgresql
+  brew services start redis
 fi
 
 stow git
