@@ -293,14 +293,12 @@ else
   # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
   ZSH_THEME="avit"
 
-  ZSH_TMUX_AUTOSTART='true'
-
   # Which plugins would you like to load?
   # Standard plugins can be found in $ZSH/plugins/
   # Custom plugins may be added to $ZSH_CUSTOM/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
   # Add wisely, as too many plugins slow down shell startup.
-  plugins=(git rbenv tmux)
+  plugins=(git rbenv)
 
   source $ZSH/oh-my-zsh.sh
 

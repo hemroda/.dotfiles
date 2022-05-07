@@ -48,7 +48,6 @@ else
   brew install rbenv ruby-build
   brew install nvm
   brew install fzf
-  brew install tmux
   brew install redis
   brew install yarn
   brew tap homebrew/cask-fonts
@@ -68,7 +67,6 @@ stow zsh
 stow ruby
 stow config
 stow vim_snippets
-stow tmux
 
 mkdir ~/Sites
 
