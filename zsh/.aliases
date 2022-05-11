@@ -18,11 +18,10 @@ alias d="cd ~/.dotfiles"
 alias s="cd ~/Sites"
 alias b="cd ~/Sites/bergamotte"
 alias h="cd ~/Sites/happydemics2"
-alias hd="cd ~/Sites/happydemics_dashboard"
 alias ma="cd ~/Sites/maavita"
-alias ms="cd ~/Sites/maavita_studio"
 alias la="cd ~/Sites/laterite"
 alias rp="cd ~/Sites/ruby_playground"
+alias py="cd ~/Sites/pystation"
 
 # Rails
 alias bers="bundle exec rails server"
