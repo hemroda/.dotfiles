@@ -1,5 +1,5 @@
 {
-  "Frozen": {
+  "frozen": {
     "prefix": ["frozen_string_literal"],
     "body": [
       "# frozen_string_literal: true",
