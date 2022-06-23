@@ -40,6 +40,7 @@ else
   brew install neovim
   brew install postgresql
   brew install imagemagick
+  brew install vips
   brew install cmake
   brew install openssl
   brew install gpg
@@ -75,9 +76,9 @@ mkdir ~/Sites
 git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 sudo rbenv install 3.0.3
-# For Neovim Ruby LSP
-sudo gem install solargraph
-
 nvm install 16.13.1
-# For Neovim JS/TS LSP
+
+# For Neovim LSPs
+sudo gem install solargraph
 npm install -g typescript
+npm install -g @tailwindcss/language-server
