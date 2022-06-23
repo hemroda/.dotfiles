@@ -23,6 +23,13 @@
       "<% if $1 %>"
     ]
   },
+  "else": {
+    "prefix": ["else"],
+    "body": [
+      "<% else %>",
+      "$1"
+    ]
+  },
   "link": {
     "prefix": ["link_to"],
     "body": [
@@ -53,6 +60,12 @@
     "prefix": ["p"],
     "body": [
       "<p>$1</p>"
+    ]
+  },
+  "li": {
+    "prefix": ["li"],
+    "body": [
+      "<li>$1</li>"
     ]
   },
   "th": {
