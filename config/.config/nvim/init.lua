@@ -88,6 +88,18 @@ map('n', '<A-0>', ':BufferLast<CR>', opts)
 map('n', '<C-w>', ':BufferClose<CR>', opts)
 -- Snippets
 nmap('<leader>os', ':VsnipOpen<CR>', opts)
+-- Rspec
+nmap('<leader>rf', ':TestFile<CR>', opts)
+nmap('<leader>rs', ':TestNearest<CR>', opts)
+nmap('<leader>rl', ':TestLast<CR>', opts)
+nmap('<leader>ra', ':TestSuite<CR>', opts)
+nmap('<leader>rg', ':TestVisit<CR>', opts)
+-- nmap <silent> <leader>t :TestNearest<CR>
+-- nmap <silent> <leader>T :TestFile<CR>
+-- nmap <silent> <leader>a :TestSuite<CR>
+-- nmap <silent> <leader>l :TestLast<CR>
+-- nmap <silent> <leader>g :TestVisit<CR>
+
 
 -- ------------------------------------------------------
 -- Global Settings

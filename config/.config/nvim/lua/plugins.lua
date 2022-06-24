@@ -59,7 +59,10 @@ return require("packer").startup(function()
   use "voldikss/vim-floaterm"
   use "terrortylor/nvim-comment"
   use {"lewis6991/gitsigns.nvim", requires = {"nvim-lua/plenary.nvim"}}
-  -- use "windwp/nvim-autopairs" -- Auto pairs "", "", [], {}, (), ``
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
   
   -- Collection of configurations for the built-in LSP client
   use "williamboman/nvim-lsp-installer"
@@ -82,10 +85,7 @@ return require("packer").startup(function()
   use "RRethy/nvim-treesitter-endwise" 
   use "tpope/vim-rails"
   use "windwp/nvim-ts-autotag"
-  use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
+  use "vim-test/vim-test"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

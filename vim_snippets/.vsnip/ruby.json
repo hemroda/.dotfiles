@@ -1,6 +1,6 @@
 {
-  "frozen": {
-    "prefix": ["frozen_string_literal"],
+  "frozen_string_literal": {
+    "prefix": ["frozen"],
     "body": [
       "# frozen_string_literal: true",
       "$1"
