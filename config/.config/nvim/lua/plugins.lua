@@ -50,10 +50,11 @@ return require("packer").startup(function()
   use "lukas-reineke/indent-blankline.nvim"
   use "nvim-treesitter/nvim-treesitter"
   use {"romgrk/barbar.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
+  use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons",}}
 
   -- File explorer and search
-  use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons",}}
   use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Tools
   use "voldikss/vim-floaterm"

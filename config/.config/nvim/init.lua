@@ -53,6 +53,7 @@ map('n', '<leader>t-', ':NvimTreeCollapse<CR>', opts)
 
 -- Telescope
 map("n", "<leader>f", '<cmd>lua require("telescope.builtin").find_files()<cr>', opts)
+map("n", "<leader>cf", '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_ivy())<cr>', opts)
 map('n', '<leader>g', '<cmd>lua require("telescope.builtin").live_grep()<cr>', opts)
 map('n', '<leader>b', '<cmd>lua require("telescope.builtin").buffers()<cr>', opts)
 
@@ -94,11 +95,6 @@ nmap('<leader>rs', ':TestNearest<CR>', opts)
 nmap('<leader>rl', ':TestLast<CR>', opts)
 nmap('<leader>ra', ':TestSuite<CR>', opts)
 nmap('<leader>rg', ':TestVisit<CR>', opts)
--- nmap <silent> <leader>t :TestNearest<CR>
--- nmap <silent> <leader>T :TestFile<CR>
--- nmap <silent> <leader>a :TestSuite<CR>
--- nmap <silent> <leader>l :TestLast<CR>
--- nmap <silent> <leader>g :TestVisit<CR>
 
 
 -- ------------------------------------------------------
