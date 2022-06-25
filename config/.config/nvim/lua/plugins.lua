@@ -51,6 +51,7 @@ return require("packer").startup(function()
   use "nvim-treesitter/nvim-treesitter"
   use {"romgrk/barbar.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
   use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons",}}
+  use {"p00f/nvim-ts-rainbow"}
 
   -- File explorer and search
   use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
