@@ -21,8 +21,10 @@ alias c="cd ~/Sites/creolecorner/"
 alias h="cd ~/Sites/happydemics2"
 alias ma="cd ~/Sites/maavita"
 alias la="cd ~/Sites/laterite"
-alias rp="cd ~/Sites/ruby_playground"
+alias r="cd ~/Sites/rubymine"
 alias py="cd ~/Sites/pystation"
+alias a="cd ~/Sites/api"
+alias w="cd ~/Sites/web"
 
 # Rails
 alias bers="bundle exec rails server"

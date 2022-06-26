@@ -53,7 +53,8 @@ else
   brew install yarn
   brew tap homebrew/cask-fonts
   brew install --cask font-hack-nerd-font
-
+  brew install golang
+  brew install gopl
   mkdir ~/.nvm
   mkdir ~/.vim
 

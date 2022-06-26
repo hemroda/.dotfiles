@@ -333,6 +333,8 @@ else
 
     export CFLAGS="-Wno-error=implicit-function-declaration"
     export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --with-zlib-dir=$(brew --prefix zlib)"
+    export EDITOR="vim"
+    export BUNDLER_EDITOR=code
   fi
 
 
