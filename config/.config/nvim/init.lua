@@ -105,17 +105,17 @@ opt.showmode = true
 opt.number = true
 opt.relativenumber = true        -- bool: Show relative line numbers
 opt.colorcolumn = "+1"
-opt.foldmethod = 'indent'
-opt.foldlevel = 1
+opt.clipboard = "unnamed"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.list = false
 opt.foldnestmax = 10
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.foldenable = false
 opt.cursorline = true
 
 -- [[ Filetypes ]]
-opt.encoding = 'utf8'            -- str:  String encoding to use
-opt.fileencoding = 'utf8'        -- str:  File encoding to use
+opt.encoding = "utf8"            -- str:  String encoding to use
+opt.fileencoding = "utf8"        -- str:  File encoding to use
 
 -- [[ Theme ]]
 opt.syntax = "ON"                -- str:  Allow syntax highlighting
