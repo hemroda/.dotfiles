@@ -37,6 +37,7 @@ else
   echo "-----------------------------------"
   brew install stow
   brew install kitty
+  brew install tmux
   brew install neovim
   brew install postgresql
   brew install imagemagick
@@ -55,6 +56,17 @@ else
   brew install --cask font-hack-nerd-font
   brew install golang
   brew install gopl
+  brew install --cask 1password
+  brew install --cask alacritty
+  brew install --cask alfred           
+  brew install --cask discord
+  brew install --cask obsidian         
+  brew install --cask postman         
+  brew install --cask slack
+  brew install --cask spacelauncher    
+  brew install --cask spotify
+  brew install --cask vivaldi
+  brew install --cask brave-browser
   mkdir ~/.nvm
   mkdir ~/.vim
 
