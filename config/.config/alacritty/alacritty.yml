@@ -1,6 +1,6 @@
 font:
   normal:
-    family: Hack Regular Nerd Font Complete
+    family: font-hack-nerd-font
     style: Regular
 
   bold:
@@ -13,3 +13,13 @@ font:
     style: Bold Italic
 
   size: 11
+
+
+# Window padding (changes require restart)
+#
+# Blank space added around the window in pixels. This padding is scaled
+# by DPI and the specified value is always added at both opposing sides.
+window:
+  padding:
+    x: 6
+    y: 6
