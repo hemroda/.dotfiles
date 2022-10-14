@@ -15,6 +15,7 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'vim-airline/vim-airline'
   Plug 'bagrat/vim-buffet'
+  Plug 'kien/rainbow_parentheses.vim'
 
   " Search
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
