@@ -2,6 +2,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Note: Make sure the function is defined before `vim-buffet` is loaded.
+function! g:BuffetSetCustomColors()
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=15 ctermfg=0 guibg=#00FF00 guifg=#000000
+  hi! BuffetBuffer cterm=NONE ctermbg=0 ctermfg=15 guibg=#00FF00 guifg=#000000
+endfunction
+
 source $HOME/.vim/plugins.vim
 
 
@@ -144,13 +150,6 @@ command! -bang -nargs=* Rg
 
 
 " =========================== Buffet =========================
-" Note: Make sure the function is defined before `vim-buffet` is loaded.
-function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=15 ctermfg=0 guibg=#00FF00 guifg=#000000
-  hi! BuffetBuffer cterm=NONE ctermbg=0 ctermfg=15 guibg=#00FF00 guifg=#000000
-endfunction
-
-noremap <Tab> :bn<CR>
 noremap <S-Tab> :bp<CR>
 noremap <Leader><Tab> :Bw<CR>
 noremap <Leader><S-Tab> :Bw!<CR>
@@ -183,3 +182,4 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+

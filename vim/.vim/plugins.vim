@@ -25,6 +25,14 @@ call plug#begin('~/.vim/autoload/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
 
+  Plug 'tpope/vim-endwise'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'tpope/vim-rails'
+
   " Helpful tools
   Plug 'tpope/vim-commentary'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'alvan/vim-closetag'
+  Plug 'tpope/vim-surround'
+
 call plug#end()
