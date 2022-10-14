@@ -1,6 +1,6 @@
 font:
   normal:
-    family: font-hack-nerd-font
+    family: Menlo
     style: Regular
 
   bold:
@@ -12,7 +12,7 @@ font:
   bold_italic:
     style: Bold Italic
 
-  size: 11
+  size: 12
 
 
 # Window padding (changes require restart)
@@ -23,3 +23,12 @@ window:
   padding:
     x: 6
     y: 6
+
+
+key_bindings:
+    # French keyboard works on MAC
+    - { key: LBracket, mods: Alt,     chars: "{"                           }
+    - { key: RBracket, mods: Alt,     chars: "}"                           }
+    - { key: LBracket, mods: Alt|Shift,chars: "["                          }
+    - { key: RBracket, mods: Alt|Shift,chars: "]"                          }
+    - { key: 37,        mods: Alt|Shift,chars: "|"                         }
