@@ -13,39 +13,17 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/autoload/plugged')
   " Theme
   Plug 'morhetz/gruvbox'
-  Plug 'lifepillar/vim-gruvbox8'
   Plug 'vim-airline/vim-airline'
-  Plug 'kien/rainbow_parentheses.vim'
-  Plug 'Yggdroot/indentLine'
+  Plug 'bagrat/vim-buffet'
 
   " Search
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'vim-scripts/AutoComplPop'
-  Plug 'majutsushi/tagbar'
 
   " Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
 
-  " Ruby
-  Plug 'tpope/vim-endwise'
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'tpope/vim-rails'
-
-  " CoffeeScript
-  Plug 'kchmck/vim-coffee-script'
-
-  " Syntax highlighting/styling/helper
-  Plug 'dense-analysis/ale'
-
-  " Searching
-  Plug 'preservim/nerdtree'
-
   " Helpful tools
   Plug 'tpope/vim-commentary'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'alvan/vim-closetag'
-  Plug 'tpope/vim-surround'
 call plug#end()
-

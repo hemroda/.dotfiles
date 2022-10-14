@@ -25,6 +25,7 @@ alias r="cd ~/Sites/rubymine"
 alias py="cd ~/Sites/pystation"
 alias a="cd ~/Sites/api"
 alias w="cd ~/Sites/web"
+alias n="cd ~/Sites/notes"
 
 # Rails
 alias bers="bundle exec rails server"
