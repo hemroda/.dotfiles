@@ -1,31 +1,38 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Pluggins
+" => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $HOME/.vim/plugins.vim
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Remap Keys
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ','			                                      " Setting leader key to comma
-nmap <leader>sv :source ~/.dotfiles/vim/.vimrc<CR>
-nmap ,ev :tabedit ~/.dotfiles/vim/.vimrc<CR>		              " Open vimrc file in new buffer for quick edit
-nmap ,ep :tabedit ~/.dotfiles/vim/.vim/plugins.vim<CR>        " Open vimrc file in new buffer for quick edit
-nmap ,b :Buffers<CR>
+" Setting leader key to comma
+let mapleader = ','
+" Source vimrc file
+nmap <leader>sv :source ~/.dotfiles/vim/.vim/vimrc<CR>
+" Open vimrc file in new buffer for quick edit
+nmap ,ev :tabedit ~/.dotfiles/vim/.vim/vimrc<CR>
+" Open plugins file in new buffer for quick edit
+nmap ,ep :tabedit ~/.dotfiles/vim/.vim/plugins.vim<CR>
 
-" ================= Split Opening Commands ====================
-nnoremap <leader>h :split<space>
-nnoremap <leader>v :vsplit<space>
+" Tab to switch buffers in Normal mode
+nmap <Tab> :bnext<CR>
+nmap <S-Tab> :bprevious<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype indent on
+filetype plugin on
+set background=dark
 syntax on
 set termguicolors
 colorscheme gruvbox
-set background=dark
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,9 +41,12 @@ set background=dark
 set encoding=utf-8
 set number
 set relativenumber
-set cursorline                                                " Enable highlighting of the current line
-set autoread                    		                          " Reload files changed outside vim
-set autowriteall  					                                  " Automatically write the file when switching buffers
+" Enable highlighting of the current line
+set cursorline
+" Reload files changed outside vim
+set autoread
+" Automatically write the file when switching buffers
+set autowriteall
 set updatetime=100
 
 " ===================== Show whitespaces ======================
@@ -55,14 +65,18 @@ nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 " ========================= Search ============================
-set incsearch       				               " Find the next match as we type the search
-set hlsearch        				               " Highlight searches by default
-set ignorecase    			                       " Ignore case when searching...
-set smartcase       				               " ...unless we type a capital
-nmap <leader><space> :nohlsearch<cr>		               " Add simple highlight removal after search.
+" Find the next match as we type the search
+set incsearch
+" Highlight searches by default
+set hlsearch
+" Ignore case when searching...
+set ignorecase
+" ...unless we type a capital
+set smartcase
+" Add simple highlight removal after search.
+nmap <leader><space> :nohlsearch<cr>
 
-
-" ================ Turn Off Swap Files ==============
+" =================== Turn Off Swap Files ====================
 set noswapfile
 set nobackup
 set nowb
@@ -74,13 +88,12 @@ set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-set expandtab                                                 " Expand tabs to spaces
-
-filetype plugin on
-filetype indent on
-
-set list listchars=tab:\ \ ,trail:·		                        " Display tabs and trailing spaces visually
-set linebreak    				                                      " Wrap lines at convenient points
+" Expand tabs to spaces
+set expandtab
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:.
+" Wrap lines at convenient points
+set linebreak
 
 " indent/unindent with tab/shift-tab
 nmap <Tab> >>
@@ -91,14 +104,6 @@ nmap <S-tab> <<
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" ============================ NerdTree =======================
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-i> :NERDTreeFind<CR>
-
-let NERDTreeShowHidden=1                                       " Show dotfiles
 
 " ============================== FZF ==========================
 map <leader>p :Files<CR>
@@ -113,15 +118,6 @@ let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 
 " Make Ripgrep ONLY search file contents and not filenames
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-
-
-"" command! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --hidden --smart-case --no-heading --color=always '.shellescape(<q-args>), 1,
-"   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-"   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4.. -e'}, 'right:50%', '?'),
-"   \   <bang>0)" Make Ripgrep ONLY search file contents and not filenames
-
+\ call fzf#vim#grep(
+\   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+\   fzf#vim#with_preview(), <bang>0)
