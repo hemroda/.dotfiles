@@ -52,8 +52,6 @@ else
   brew install fzf
   brew install redis
   brew install yarn
-  brew tap homebrew/cask-fonts
-  brew install --cask font-hack-nerd-font
   brew install golang
   brew install gopl
   brew install --cask 1password
@@ -68,6 +66,9 @@ else
   brew install --cask vivaldi
   brew install --cask brave-browser
   brew install --cask homebrew/cask-versions/firefox-developer-edition
+  brew tap homebrew/cask-fonts
+  brew install --cask font-jetbrains-mono-nerd-font
+  brew install --cask font-hack-nerd-font
   mkdir ~/.nvm
   mkdir ~/.vim
 
