@@ -62,6 +62,7 @@ else
   brew install --cask homebrew/cask-versions/firefox-developer-edition
   brew tap homebrew/cask-fonts
   brew install --cask font-hack-nerd-font
+  brew install --cask font-jetbrains-mono
   brew install --cask flux
   mkdir ~/.nvm
   mkdir ~/.vim
