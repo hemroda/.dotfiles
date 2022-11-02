@@ -1,5 +1,3 @@
 autoload
 .netrwhist
 .DS_Store
-config/.config/nvim/plugin/packer_compiled.lua
-config/.config/scalingo
