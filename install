@@ -20,6 +20,15 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # rbenv
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv
   cd ~/.rbenv && src/configure && make -C src
+
+  # install cargo for rust based cli tools
+  curl https://sh.rustup.rs -sSf | sh
+  cargo install alacritty
+  cargo install starship --locked
+  cargo install bat --locked
+  cargo install exa
+  cargo install rm-improved
+  cargo install xcp
 else
   echo "Setting up your MACOS"
   echo "---------------------"
@@ -49,6 +58,11 @@ else
   brew install redis
   brew install yarn
   brew install nvm
+  brew install starship
+  brew install bat
+  brew install exa
+  brew install rm-improved
+  brew install pnpm
   brew install --cask docker
   brew install --cask 1password
   brew install --cask alacritty

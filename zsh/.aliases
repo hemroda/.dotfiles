@@ -5,6 +5,8 @@ alias sz="source ~/.zshrc"
 alias cv="vim ~/.vimrc"
 alias cnv="vim ~/.config/vim/init.vim"
 alias l="ls -la"
+alias ls='exa --git --icons --color=always --group-directories-first' # Alias ls to exa
+alias cp="xcp"
 alias cport="sudo lsof -nP -iTCP:1025 -sTCP:LISTEN"
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias mzsh="arch -arm64 zsh"
