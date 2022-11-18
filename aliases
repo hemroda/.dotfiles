@@ -6,8 +6,30 @@ alias l="ls -la"
 # Navigation
 alias d="cd ~/.dotfiles"
 alias s="cd ~/Sites"
+alias b="cd ~/Sites/bergamotte"
+alias c="cd ~/Sites/creolecorner/"
+alias h="cd ~/Sites/happydemics2"
 alias w="cd ~/Sites/workstation"
 alias wc="cd ~/Sites/workstation/client"
+alias r="cd ~/Sites/rubymine"
+alias ma="cd ~/Sites/maavita"
+alias la="cd ~/Sites/laterite"
+alias py="cd ~/Sites/pystation"
+alias mad="cd ~/Sites/maavita_django"
+alias man="cd ~/Sites/maavita_nextjs"
+
+# Rails
+alias bers="bundle exec rails server"
+alias berc="bundle exec rails console"
+alias beg="bundle exec guard"
+alias wds="./bin/webpack-dev-server"
+alias fs="bundle exec foreman start"
+alias bedc="bundle exec rails db:drop db:create"
+alias bem="bundle exec rails db:migrate"
+alias bes="bundle exec rails db:seed_fu"
+alias nuke="bedc; bem; bes"
+alias be='bundle exec'
+alias bi='bundle install'
 
 # Git
 alias ga="git add "
