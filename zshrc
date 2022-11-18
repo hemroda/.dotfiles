@@ -11,7 +11,6 @@ else
   # MACOS
   # ----------------------------------------------------------------------- #
   # ----------------------------------------------------------------------- #
-  eval "$(starship init zsh)"
 
   # Aliases
   # ----------------------------------------------------------------------- #
@@ -22,6 +21,12 @@ else
   # ----------------------------------------------------------------------- #
   export EDITOR="vim"
   PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+  
+  # oh-my-zsh
+  # ----------------------------------------------------------------------- #
+  export ZSH="$HOME/.oh-my-zsh"
+  plugins=(git)
+  source $ZSH/oh-my-zsh.sh
 
   if [ "$(uname -p)" = "i386" ]; then
     echo "Running in i386 mode (Rosetta)"
@@ -46,6 +51,8 @@ else
     export EDITOR="vim"
     export BUNDLER_EDITOR=vim
   fi
+
+  eval "$(starship init zsh)"
 
   if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
