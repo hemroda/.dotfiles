@@ -13,6 +13,9 @@ sync:
 	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $(PWD)/alacritty.yml ~/.config/alacritty/alacritty.yml
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/gitconfig ~/.gitconfig
 	[ -f ~/.gitignore ] || ln -s $(PWD)/gitignore ~/.gitignore
+	[ -f ~/.gemrc ] || ln -s $(PWD)/gemrc ~/.gemrc
+	[ -f ~/.rspec ] || ln -s $(PWD)/rspec ~/.rspec
+
 
 	# don't show last login message
 	touch ~/.hushlogin
@@ -29,5 +32,7 @@ clean:
 	rm -f ~/.config/alacritty/alacritty.yml
 	rm -f ~/.gitconfig
 	rm -f ~/.gitignore
+	rm -f ~/.gemrc
+	rm -f ~/.rspec
 
 .PHONY: all clean sync
