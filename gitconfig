@@ -1,0 +1,25 @@
+# This is Git's per-user configuration file.
+[user]
+	name = hemroda
+	email = hemroda@gmail.home
+[credential]
+	helper = osxkeychain
+[core]
+	editor = vim
+	excludesfile = OME/.gitignore
+[push]
+	default = current
+[color]
+	ui = true
+[init]
+	defaultBranch = main
+[color "branch"]
+	current = blue
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = red
+[url "git@github.com:"]
+	insteadOf = https://github.com/

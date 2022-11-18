@@ -1,0 +1,14 @@
+# General
+autoload
+.netrwhist
+.DS_Store
+
+# VScode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains IDEs
+.idea/*

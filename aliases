@@ -1,0 +1,35 @@
+# System
+alias vi="vim"
+alias cport="sudo lsof -nP -iTCP:1025 -sTCP:LISTEN"
+alias l="ls -la"
+
+# Navigation
+alias d="cd ~/.dotfiles"
+alias s="cd ~/Sites"
+alias w="cd ~/Sites/workstation"
+alias wc="cd ~/Sites/workstation/client"
+
+# Git
+alias ga="git add "
+alias gaa="git add ."
+alias gs="git status"
+alias gcm="git commit -m "
+alias gco="git checkout "
+alias gb="git branch "
+alias gca="git commit --amend -m "
+alias gcan='git commit --amend --no-edit -a'
+alias gpos="git pull origin staging"
+alias gpod="git pull origin develop"
+alias gpo="git pull origin "
+alias gp="git push "
+alias wip="git add .;git commit -m 'wip'"
+alias wipa="git add .;git commit -am 'wip'"
+alias nah='git reset --hard;git clean -df'
+alias please='git push --force-with-lease '
+alias oops='gcan;please'
+alias gclean='git branch --merged| egrep -v "(^\*|master|staging|develop)" | xargs git branch -d'
+
+# Dummy
+alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
+alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
+alias fight="printf '(ง'̀-'́)ง' | pbcopy"

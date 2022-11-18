@@ -1,0 +1,34 @@
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+
+  bold:
+    style: Bold
+
+  italic:
+    style: Italic
+
+  bold_italic:
+    style: Bold Italic
+
+  size: 12
+
+
+# Window padding (changes require restart)
+#
+# Blank space added around the window in pixels. This padding is scaled
+# by DPI and the specified value is always added at both opposing sides.
+window:
+  padding:
+    x: 6
+    y: 6
+
+
+key_bindings:
+    # French keyboard works on MAC
+    - { key: LBracket, mods: Alt,     chars: "{"                           }
+    - { key: RBracket, mods: Alt,     chars: "}"                           }
+    - { key: LBracket, mods: Alt|Shift,chars: "["                          }
+    - { key: RBracket, mods: Alt|Shift,chars: "]"                          }
+    - { key: 37,        mods: Alt|Shift,chars: "|"                         }
