@@ -3,7 +3,7 @@
 
 
 ## Install xcode
-`xcode-select --install` and `sudo xcodebuild -license`  
+`xcode-select --install`
 
 
 ## Setup git
