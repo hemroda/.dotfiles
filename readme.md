@@ -27,3 +27,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ## Install all apps using brew
 brew bundle
 
+
+## Start services
+`$ brew services restart postgresql`  
+`$ brew services start redis`
