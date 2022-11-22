@@ -6,7 +6,7 @@
 	helper = osxkeychain
 [core]
 	editor = vim
-	excludesfile = OME/.gitignore
+	excludesfile = /Users/$USER/.gitignore
 [push]
 	default = current
 [color]
