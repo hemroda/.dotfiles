@@ -47,6 +47,7 @@ else
   brew install tree
   brew install redis
   brew install yarn
+  brew install vlc
   brew install --cask docker
   brew install --cask 1password
   brew install --cask discord
@@ -54,6 +55,7 @@ else
   brew install --cask postman
   brew install --cask slack
   brew install --cask spotify
+  brew install --cask telegram
   brew install --cask brave-browser
   brew install --cask google-chrome
   brew install --cask homebrew/cask-versions/firefox-developer-edition
