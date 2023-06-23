@@ -35,6 +35,7 @@ else
   echo "-----------------------------------"
   brew tap homebrew/core
   brew install stow
+  brew install asdf
   brew install postgresql
   brew install imagemagick
   brew install vips
@@ -52,7 +53,6 @@ else
   brew install --cask docker
   brew install --cask iterm2
   brew install --cask warp
-  brew install --cask 1password
   brew install --cask discord
   brew install --cask obsidian
   brew install --cask postman
@@ -88,3 +88,7 @@ asdf global nodejs latest
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install ruby 3.2.0
 asdf global ruby 3.2.0
+
+asdf plugin-add python
+asdf install python 3.11.1
+asdf global python 3.11.1
