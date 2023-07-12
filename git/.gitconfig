@@ -11,4 +11,4 @@
 [format]
 	pretty = format:%C(reverse yellow)%h%C(auto) %C(ul normal)%s%C(auto) %d%n%C(reset)%aN <%aE> %C(cyan)%ad %C(green)(%ar)%n
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
