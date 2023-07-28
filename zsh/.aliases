@@ -15,6 +15,7 @@ alias rm="cd ~/Sites/rubymine"
 alias py="cd ~/Sites/pystation"
 alias w="cd ~/Sites/works"
 alias n="cd ~/Sites/notes"
+alias zet="cd /Users/${USER}/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Zettelkasten"
 
 # Rails
 alias bers="bundle exec rails server"
