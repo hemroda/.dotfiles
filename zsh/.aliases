@@ -11,10 +11,10 @@ alias cr="cd ~/Sites/creolecorner/"
 alias cl="cd ~/Sites/cloudcruder"
 alias ca="cd ~/Sites/casa_laterite"
 alias ma="cd ~/Sites/maavita"
+alias mas="cd ~/Sites/maavita/src"
 alias rm="cd ~/Sites/rubymine"
 alias py="cd ~/Sites/pystation"
 alias w="cd ~/Sites/works"
-alias n="cd ~/Sites/notes"
 alias zet="cd /Users/${USER}/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Zettelkasten"
 
 # Rails
