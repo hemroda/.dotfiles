@@ -1,11 +1,15 @@
-Dotfiles
-===
+# Dotfiles
 
+## Install
 
-#### Clone dotfiles repo
-`$ cd && git clone git@github.com:MikHM/.dotfiles.git`
+### Clone dotfiles repo
 
+```sh
+❯ cd && git clone git@github.com:hemroda/.dotfiles.git
+```
 
-#### Run Installation script
+### Run Installation script
 
-`$ zsh install`
+```sh
+❯zsh install
+```
