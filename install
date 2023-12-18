@@ -53,7 +53,6 @@ else
   brew install azure-cli
   brew install --cask docker
   brew install --cask iterm2
-  brew install --cask warp
   brew install --cask discord
   brew install --cask obsidian
   brew install --cask postman
@@ -77,7 +76,6 @@ stow git
 stow vim
 mv ~/.zshrc ~/.zshrc_old
 stow zsh
-stow ruby
 stow config
 
 mkdir ~/Sites
@@ -86,10 +84,6 @@ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs 18.16.0
 asdf global nodejs 18.16.0
 
-asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 3.2.0
-asdf global ruby 3.2.0
-
 asdf plugin-add python
-asdf install python 3.11.1
-asdf global python 3.11.1
+asdf install python 3.12
+asdf global python 3.12

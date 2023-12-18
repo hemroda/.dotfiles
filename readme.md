@@ -11,5 +11,5 @@
 ### Run Installation script
 
 ```sh
-❯zsh install
+❯ zsh install
 ```
