@@ -126,7 +126,10 @@ set list listchars=tab:\ \ ,trail:.
 " Wrap lines at convenient points
 set linebreak
 
-
+" ================== Backups & temp files =====================
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+set undodir=~/.vim/undo
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Config
