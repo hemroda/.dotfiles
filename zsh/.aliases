@@ -12,6 +12,7 @@ alias c="cd ~/Sites/CRUD-in-the-Cloud"
 alias ca="cd ~/Sites/casa_laterite"
 alias py="cd ~/Sites/pystation"
 alias w="cd ~/Sites/works"
+alias szet="cd ~/Sites/Zettelkasten"
 alias zet="cd /Users/${USER}/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Zettelkasten"
 
 # Rails
