@@ -335,6 +335,7 @@ else
     export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --with-zlib-dir=$(brew --prefix zlib)"
     export EDITOR="vim"
     export BUNDLER_EDITOR=code
+    export PATH="/opt/homebrew/bin/mysql:$PATH"
   fi
 
   . /opt/homebrew/opt/asdf/libexec/asdf.sh

@@ -51,6 +51,7 @@ else
   brew install yarn
   brew install vlc
   brew install azure-cli
+  brew install mysql
   brew install --cask docker
   brew install --cask iterm2
   brew install --cask discord
