@@ -49,6 +49,7 @@ alias nah='git reset --hard;git clean -df'
 alias please='git push --force-with-lease '
 alias oops='gcan;please'
 alias gclean='git branch --merged| egrep -v "(^\*|master|staging|develop)" | xargs git branch -d'
+alias glcommiters="git log --format='%aN' | sort | uniq -c | sort -rn | head -10"
 
 # Dummy
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"

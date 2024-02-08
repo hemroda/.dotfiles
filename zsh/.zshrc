@@ -332,17 +332,17 @@ else
     alias brew='/opt/homebrew/bin/brew'
 
     export CFLAGS="-Wno-error=implicit-function-declaration"
-    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --with-zlib-dir=$(brew --prefix zlib)"
+    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3) --with-readline-dir=$(brew --prefix readline) --with-libyaml-dir=$(brew --prefix libyaml) --with-zlib-dir=$(brew --prefix zlib)"
     export EDITOR="vim"
     export BUNDLER_EDITOR=code
     export PATH="/opt/homebrew/bin/mysql:$PATH"
+    export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+    export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+    export PATH="/opt/homebrew/bin/zstd":$PATH
+    export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
   fi
 
   . /opt/homebrew/opt/asdf/libexec/asdf.sh
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hemroda/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hemroda/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/hemroda/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hemroda/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
