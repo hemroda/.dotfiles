@@ -1,21 +1,20 @@
 # System
 alias l="ls -la"
 alias cport="sudo lsof -nP -iTCP:1025 -sTCP:LISTEN"
-alias vi="vim"
+alias vi="nvim"
 alias clean_packer="rm -rf ~/.local/share/vim/site/pack/packer/start/*"
 
 # Navigation
-alias d="cd ~/.dotfiles"
+alias d="cd ~/dotfiles"
 alias s="cd ~/Sites"
-alias ma="cd ~/Sites/maavita"
-alias me="cd ~/Sites/meta"
-alias cr="cd ~/Sites/creolecorner/"
-alias c="cd ~/Sites/CRUD-in-the-Cloud"
-alias ca="cd ~/Sites/casa_laterite"
+alias mr="cd ~/Sites/maavita_rails"
+alias ccr="cd ~/Sites/creolecorner_rails/"
+alias cr="cd ~/Sites/crud-in-the-cloud_rails"
+alias ca="cd ~/Sites/casa_laterite_rails"
 alias py="cd ~/Sites/pystation"
+alias r="cd ~/Sites/rubymine"
 alias w="cd ~/Sites/works"
-alias szet="cd ~/Sites/Zettelkasten"
-alias zet="cd /Users/${USER}/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Zettelkasten"
+alias z="cd ~/Sites/zettelkasten"
 
 # Rails
 alias bers="bundle exec rails server"
@@ -55,4 +54,3 @@ alias glcommiters="git log --format='%aN' | sort | uniq -c | sort -rn | head -10
 alias shrug="printf '¯\_(ツ)_/¯' | pbcopy"
 alias flipt="printf '(╯°□°)╯︵ ┻━┻' | pbcopy"
 alias fight="printf '(ง'̀-'́)ง' | pbcopy"
-

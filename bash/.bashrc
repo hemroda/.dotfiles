@@ -1,39 +1,38 @@
+#!/usr/bin/env bash
+
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-# Remove the message "Last login: [timestamp]" that appears when you open a terminal session.
-touch ~/.hushlogin
-
-# Disable the compfix warning
-export ZSH_DISABLE_COMPFIX=true
-
-# Set default editor
 export EDITOR="vim"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.asdf/shims:$PATH"
 
+eval "$(starship init bash)"
+eval "$(_PIPENV_COMPLETE=bash_source pipenv)"
+
+# Get the operating system name
+os=$(uname -s)
 
 # ----------------------------------------------------------------------- #
 # ----------------------------------------------------------------------- #
 # MACOS #
 # ----------------------------------------------------------------------- #
 # ----------------------------------------------------------------------- #
-if [[ "$(uname)" == "Darwin" ]]; then
+if [ "$os" == "Darwin" ]; then
+
     # ARM architecture configurations
-    if [[ "$(uname -m)" == "arm64" ]]; then
-        echo "Running Zsh on an ARM architecture"
+    if [ "$(uname -p)" == "arm" ]; then
+        echo "Running Bash on an ARM architecture"
         # asdf
         . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
         # homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
 
-        eval "$(starship init zsh)"
-
         # EXPORTS
-        export PATH="$HOME/.local/bin:$PATH"
-        export PATH="$HOME/.asdf/shims:$PATH"
-
         PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+        export PATH="$HOME/.asdf/shims:$PATH"
 
         export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
         export LDFLAGS="-L/opt/homebrew/opt/postgresql@14/lib"
@@ -41,9 +40,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
     fi
 
     # Intel i386 architecture configurations
-    if [ "$(uname -m)" = "i386" ]; then
-    
-        echo "Running Zsh in i386 architecture"
+    if [ "$(uname -p)" = "i386" ]; then
+        echo "Running Bash in i386 architecture"
         # homebrew
         eval "$(/usr/local/homebrew/bin/brew shellenv)"
         alias brew='/usr/local/homebrew/bin/brew'

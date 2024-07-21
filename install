@@ -1,94 +1,76 @@
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  echo "Setting up KALI"
-  echo "---------------------"
+#!/bin/bash
 
-  sudo apt install stow
-  sudo apt install libpq-dev
-  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-  # postgresql
-  sudo apt install postgresql -y
-  sudo systemctl start postgresql
-  sudo systemctl status postgresql
-  # redis
-  sudo apt install redis-server
-  sudo systemctl enable redis-server
-  systemctl status redis-server
-  # ripgrep
-  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
-  sudo dpkg -i ripgrep_13.0.0_amd64.deb
-  rm -rf ripgrep_13.0.0_amd64.deb
-  # rbenv
-  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-  cd ~/.rbenv && src/configure && make -C src
-else
-  echo "Setting up your MACOS"
-  echo "---------------------"
+# Get the operating system name
+os=$(uname -s)
 
-  echo "Installing Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
 
-  echo "Install ohmyzsh"
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+# MACOS #
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+if [[ "$os" == "Darwin" ]]; then
 
-  echo "Installing Stow & co using Homebrew"
-  echo "-----------------------------------"
-  brew tap homebrew/core
-  brew install stow
-  brew install asdf
-  brew install postgresql
-  brew install imagemagick
-  brew install vips
-  brew install cmake
-  brew install openssl
-  brew install gpg
-  brew install gawk
-  brew install ripgrep
-  brew install coreutils curl git
-  brew install fzf
-  brew install tree
-  brew install redis
-  brew install yarn
-  brew install vlc
-  brew install azure-cli
-  brew install mysql
-  brew install --cask docker
-  brew install --cask iterm2
-  brew install --cask discord
-  brew install --cask obsidian
-  brew install --cask postman
-  brew install --cask slack
-  brew install --cask spotify
-  brew install --cask telegram
-  brew install --cask brave-browser
-  brew install --cask google-chrome
-  brew install --cask homebrew/cask-versions/firefox-developer-edition
-  brew install --cask visual-studio-code
-  brew tap homebrew/cask-fonts
-  brew install --cask font-hack-nerd-font
-  brew install --cask flux
-  mkdir ~/.vim
+  if [[ $(command -v brew) == "" ]]; then
+    echo "Installing Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo "Install Packages using Homebrew"
 
-  brew services restart postgresql
-  brew services start redis
+    brew tap homebrew/core
+
+    brew install asdf
+    brew install postgresql@14
+    brew install starship
+    brew install stow
+    brew install vlc
+    brew install --cask brave-browser
+    brew install --cask discord
+    brew install --cask homebrew/cask-versions/firefox-developer-edition
+    brew install --cask flux
+    brew install --cask font-fira-mono-nerd-font
+    brew install --cask google-chrome
+    brew install --cask iterm2
+    brew install --cask messenger
+    brew install --cask obsidian
+    brew install --cask proton-drive 
+    brew install --cask proton-pass
+    brew install --cask protonvpn
+    brew install --cask signal
+    brew install --cask spotify
+    brew install --cask telegram
+    brew install --cask visual-studio-code
+    brew install --cask whatsapp
+    brew install --cask zed
+  fi
+
 fi
 
-stow git
-stow vim
-mv ~/.zshrc ~/.zshrc_old
-stow zsh
-stow config
-
+echo "Preparing folders"
+echo "..."
 mkdir ~/Sites
 
+echo "Use Stow to link files"
+stow bash
+stow git
+stow languages
+stow shared
+stow ssh
+stow vim
+stow zsh
+
+
+# Install NodeJS, Python, Ruby using ASDF
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 18.16.0
-asdf global nodejs 18.16.0
+asdf install nodejs 20.11.0
+asdf global nodejs 20.11.0
 
 asdf plugin-add python
-asdf install python 3.12.0
-asdf global python 3.12.0
+asdf install python 3.12.2
+asdf global python 3.12.2
+pip install --user pipenv
+pip install --user poetry
 
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 3.2.0
-asdf global ruby 3.2.0
+asdf install ruby 3.3.0
+asdf global ruby 3.3.0

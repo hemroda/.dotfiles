@@ -1,10 +1,11 @@
+# This is Git's per-user configuration file.
 [user]
-	email = hemroda@gmail.com
 	name = hemroda
+	email = hemroda-dev@pm.me
 [color]
 	ui = true
 [core]
-	excludesFile = ~/.gitignore_global
+	excludesFile = ~/.gitignore
 	editor = vim
 [log]
 	date = local

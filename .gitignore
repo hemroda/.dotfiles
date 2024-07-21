@@ -1,3 +1,7 @@
-autoload
 .netrwhist
 .DS_Store
+.vscode
+autoload
+ssh/.ssh/id_ed25519
+ssh/.ssh/known_hosts
+ssh/.ssh/id_ed25519.pub
