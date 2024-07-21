@@ -28,7 +28,7 @@ if [[ "$os" == "Darwin" ]]; then
     brew install vlc
     brew install --cask brave-browser
     brew install --cask discord
-    brew install --cask homebrew/cask-versions/firefox-developer-edition
+    brew install --cask firefox@developer-edition
     brew install --cask flux
     brew install --cask font-fira-mono-nerd-font
     brew install --cask google-chrome
