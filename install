@@ -22,13 +22,16 @@ if [[ "$os" == "Darwin" ]]; then
     brew tap homebrew/core
 
     brew install asdf
+    brew install docker-compose
     brew install postgresql@14
+    brew install redis
     brew install starship
     brew install stow
     brew install vlc
     brew install xz
     brew install --cask brave-browser
     brew install --cask discord
+    brew install --cask docker
     brew install --cask firefox@developer-edition
     brew install --cask flux
     brew install --cask font-fira-mono-nerd-font
@@ -77,3 +80,5 @@ pip install --user poetry
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install ruby 3.3.0
 asdf global ruby 3.3.0
+
+brew services start redis
