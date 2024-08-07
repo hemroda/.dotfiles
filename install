@@ -23,12 +23,14 @@ if [[ "$os" == "Darwin" ]]; then
 
     brew install asdf
     brew install docker-compose
+    brew install libvips
     brew install postgresql@14
     brew install redis
     brew install starship
     brew install stow
     brew install vlc
     brew install xz
+    brew install yarn
     brew install --cask brave-browser
     brew install --cask discord
     brew install --cask docker
@@ -82,3 +84,4 @@ asdf install ruby 3.3.0
 asdf global ruby 3.3.0
 
 brew services start redis
+brew services start postgresql
