@@ -50,3 +50,12 @@ chmod +x install
 ```
 
 
+## SSH key generator
+
+```sh
+make generate-ssh-key USER_NAME=root
+```
+
+```sh
+make generate-ssh-key USER_NAME=kamal
+```

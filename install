@@ -20,7 +20,7 @@ if [[ "$os" == "Darwin" ]]; then
     echo "Install Packages using Homebrew"
 
     brew tap homebrew/core
-
+    brew tap hashicorp/tap
     brew install asdf
     brew install docker-compose
     brew install libvips
@@ -29,6 +29,7 @@ if [[ "$os" == "Darwin" ]]; then
     brew install redis
     brew install starship
     brew install stow
+    brew install hashicorp/tap/terraform
     brew install vlc
     brew install xz
     brew install yarn
@@ -63,14 +64,13 @@ mkdir ~/Sites
 
 echo "Use Stow to link files"
 stow bash
-bash config
+stow config
 stow git
 stow languages
 stow shared
 stow ssh
 stow vim
 stow zsh
-
 
 # Install NodeJS, Python, Ruby using ASDF
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git

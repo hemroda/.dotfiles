@@ -10,11 +10,12 @@ alias s="cd ~/Sites"
 alias mr="cd ~/Sites/maavita_rails"
 alias md="cd ~/Sites/maavita_django"
 alias ccr="cd ~/Sites/creolecorner_rails/"
-alias cf="cd ~/Sites/crud-in-the-cloud_flask"
+alias cf="cd ~/Sites/crud_in_the_cloud_flask"
 alias ca="cd ~/Sites/casa_laterite_rails"
 alias py="cd ~/Sites/pystation"
 alias r="cd ~/Sites/rubymine"
 alias w="cd ~/Sites/works"
+alias zet="cd /Users/hemroda/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Zettelkasten"
 
 # Rails
 alias bers="bundle exec rails server"
