@@ -10,12 +10,16 @@ alias s="cd ~/Sites"
 alias mr="cd ~/Sites/maavita_rails"
 alias md="cd ~/Sites/maavita_django"
 alias ccr="cd ~/Sites/creolecorner_rails/"
+alias cic="cd ~/Sites/crud_in_the_cloud"
 alias cf="cd ~/Sites/crud_in_the_cloud_flask"
 alias ca="cd ~/Sites/casa_laterite_rails"
 alias py="cd ~/Sites/pystation"
 alias r="cd ~/Sites/rubymine"
 alias w="cd ~/Sites/works"
 alias zet="cd /Users/hemroda/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Zettelkasten"
+
+# Docker
+alias docker-clean="docker-compose down -v && docker system prune -af"
 
 # Rails
 alias bers="bundle exec rails server"

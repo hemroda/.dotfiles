@@ -56,6 +56,7 @@ if [[ "$os" == "Darwin" ]]; then
     brew install --cask zed
   fi
 
+  curl -LsSf https://astral.sh/uv/install.sh | sh
 fi
 
 echo "Preparing folders"
