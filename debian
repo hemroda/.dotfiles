@@ -1,0 +1,25 @@
+sudo apt-get install --no-install-recommends -y build-essential
+sudo apt-get install make build-essential libssl-dev zlib1g-dev
+sudo apt-get install libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm
+sudo apt-get install libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+if [[ $(asdf --version) == "" ]]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
+fi
+
+if [[ $(command -v 'starship') == "" ]]; then
+curl -sS https://starship.rs/install.sh | sh
+fi
+
+sudo apt install neovim
+
+echo "Use Stow to link files"
+
+stow asdf
+stow shared
+stow vim
+
+
+asdf plugin-add python
+asdf install python 3.13.0
+asdf global python 3.13.0
