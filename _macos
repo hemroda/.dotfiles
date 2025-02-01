@@ -1,0 +1,94 @@
+#!/bin/bash
+
+# Get the operating system name
+os=$(uname -s)
+
+
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+# MACOS #
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+if [[ "$os" == "Darwin" ]]; then
+
+  if [[ $(command -v brew) == "" ]]; then
+    echo "Installing Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/hemroda/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  else
+    echo "Install Packages using Homebrew"
+
+    brew tap homebrew/core
+    brew tap hashicorp/tap
+    brew install asdf
+    brew install docker-compose
+    brew install libvips
+    brew install neovim
+    brew install postgresql@14
+    brew install redis
+    brew install starship
+    brew install stow
+    brew install hashicorp/tap/terraform
+    brew install vlc
+    brew install xz
+    brew install yarn
+    brew install --cask alacritty
+    brew install --cask brave-browser
+    brew install --cask discord
+    brew install --cask docker
+    brew install --cask firefox
+    brew install --cask firefox@developer-edition
+    brew install --cask flux
+    brew install --cask font-fira-mono-nerd-font
+    brew install --cask google-chrome
+    brew install --cask ghostty
+    brew install --cask iterm2
+    brew install --cask messenger
+    brew install --cask obsidian
+    brew install --cask opera
+    brew install --cask proton-drive
+    brew install --cask proton-pass
+    brew install --cask protonvpn
+    brew install --cask signal
+    brew install --cask spotify
+    brew install --cask telegram
+    brew install --cask visual-studio-code
+    brew install --cask whatsapp
+    brew install --cask zed
+  fi
+
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+fi
+
+echo "Preparing folders"
+echo "..."
+mkdir ~/Sites
+
+echo "Use Stow to link files"
+stow bash
+stow config
+stow git
+stow languages
+stow shared
+stow ssh
+stow vim
+stow zsh
+
+# Install NodeJS, Python, Ruby using ASDF
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs 20.11.0
+asdf global nodejs 20.11.0
+
+asdf plugin-add python
+asdf install python 3.12.2
+asdf global python 3.12.2
+pip install --user pipenv
+pip install --user poetry
+
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf install ruby 3.3.0
+asdf global ruby 3.3.0
+
+brew services start redis
+brew services start postgresql
