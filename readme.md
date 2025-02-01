@@ -31,16 +31,16 @@ sudo apt install git
 cd && git clone git@github.com:hemroda/.dotfiles.git
 ```
 
-### Make sure the `install` file is executable
+### Make sure the `_debian` file is executable
 
 ```bash
-chmod +x debian
+chmod +x _debian
 ```
 
 ### Run Installation script
 
 ```bash
-./install
+./_debian
 ```
 
 
@@ -84,10 +84,10 @@ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-### Make sure the `install` file is executable
+### Make sure the `_macos` file is executable
 
 ```bash
-chmod +x install
+chmod +x _macos
 ```
 
 ### Run Installation script
