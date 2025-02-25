@@ -22,6 +22,7 @@ if [[ "$os" == "Darwin" ]]; then
     brew tap homebrew/core
     brew tap hashicorp/tap
     brew install asdf
+    brew install coreutils
     brew install docker-compose
     brew install libvips
     brew install neovim
@@ -75,20 +76,23 @@ stow ssh
 stow vim
 stow zsh
 
+# Install Golang
+asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+asdf install golang 1.24.0
+asdf global golang 1.24.0
+
 # Install NodeJS, Python, Ruby using ASDF
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs 20.11.0
 asdf global nodejs 20.11.0
 
 asdf plugin-add python
-asdf install python 3.12.2
-asdf global python 3.12.2
-pip install --user pipenv
-pip install --user poetry
+asdf install python 3.13.0
+asdf global python 3.13.0
 
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 3.3.0
-asdf global ruby 3.3.0
+asdf install ruby 3.4.2
+asdf global ruby 3.4.2
 
 brew services start redis
 brew services start postgresql

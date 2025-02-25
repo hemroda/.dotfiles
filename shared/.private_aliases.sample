@@ -1,0 +1,3 @@
+# SSH
+alias sshcic="ssh root@XX.XX.XXX.211"
+alias sshcc="ssh root@X.XX.XXX.154"

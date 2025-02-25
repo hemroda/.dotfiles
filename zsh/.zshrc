@@ -2,6 +2,10 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+if [ -f ~/.private_aliases ]; then
+    . ~/.private_aliases
+fi
+
 # Remove the message "Last login: [timestamp]" that appears when you open a terminal session.
 touch ~/.hushlogin
 
@@ -21,8 +25,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # ARM architecture configurations
     if [[ "$(uname -m)" == "arm64" ]]; then
         echo "Running Zsh on an ARM architecture"
-        # asdf
-        . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
         # homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -42,7 +44,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
     # Intel i386 architecture configurations
     if [ "$(uname -m)" = "i386" ]; then
-    
+
         echo "Running Zsh in i386 architecture"
         # homebrew
         eval "$(/usr/local/homebrew/bin/brew shellenv)"
@@ -61,3 +63,17 @@ if [[ "$(uname)" == "Darwin" ]]; then
         export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
     fi
 fi
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/hemroda/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/hemroda/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+# Herd injected PHP binary.
+export PATH="/Users/hemroda/Library/Application Support/Herd/bin/":$PATH

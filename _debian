@@ -11,6 +11,8 @@ if [[ $(command -v 'starship') == "" ]]; then
 curl -sS https://starship.rs/install.sh | sh
 fi
 
+sudo apt install coreutils
+sudo apt install git
 sudo apt install neovim
 
 echo "Use Stow to link files"
@@ -19,6 +21,8 @@ stow asdf
 stow shared
 stow vim
 
+asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+asdf install golang 1.24.0
 
 asdf plugin-add python
 asdf install python 3.13.0
