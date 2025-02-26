@@ -47,7 +47,6 @@ if [[ "$os" == "Darwin" ]]; then
     brew install --cask iterm2
     brew install --cask messenger
     brew install --cask obsidian
-    brew install --cask opera
     brew install --cask proton-drive
     brew install --cask proton-pass
     brew install --cask protonvpn
