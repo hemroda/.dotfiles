@@ -21,6 +21,7 @@ if [[ "$os" == "Darwin" ]]; then
 
     brew tap homebrew/core
     brew tap hashicorp/tap
+    brew install jesseduffield/lazydocker/lazydocker
     brew install asdf
     brew install coreutils
     brew install lazydocker
