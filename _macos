@@ -23,7 +23,7 @@ if [[ "$os" == "Darwin" ]]; then
     brew tap hashicorp/tap
     brew install asdf
     brew install coreutils
-    brew install docker-compose
+    brew install lazydocker
     brew install libvips
     brew install neovim
     brew install postgresql@14
@@ -34,10 +34,8 @@ if [[ "$os" == "Darwin" ]]; then
     brew install vlc
     brew install xz
     brew install yarn
-    brew install --cask alacritty
     brew install --cask brave-browser
     brew install --cask discord
-    brew install --cask docker
     brew install --cask firefox
     brew install --cask firefox@developer-edition
     brew install --cask flux
@@ -52,10 +50,9 @@ if [[ "$os" == "Darwin" ]]; then
     brew install --cask protonvpn
     brew install --cask signal
     brew install --cask spotify
-    brew install --cask telegram
-    brew install --cask visual-studio-code
+    brew install --cask telegram  
+    brew install --cask vscodium
     brew install --cask whatsapp
-    brew install --cask zed
   fi
 
   curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -82,12 +79,12 @@ asdf global golang 1.24.0
 
 # Install NodeJS, Python, Ruby using ASDF
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 20.11.0
-asdf global nodejs 20.11.0
+asdf install nodejs 22.14.0
+asdf global nodejs 22.14.0
 
 asdf plugin-add python
-asdf install python 3.13.0
-asdf global python 3.13.0
+asdf install python 3.13.2
+asdf global python 3.13.2
 
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install ruby 3.4.2
