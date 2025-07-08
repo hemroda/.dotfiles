@@ -35,11 +35,16 @@ if [[ "$(uname)" == "Darwin" ]]; then
         export PATH="$HOME/.local/bin:$PATH"
         export PATH="$HOME/.asdf/shims:$PATH"
 
+        # asdf initialization
+        . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
         PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
         export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
         export LDFLAGS="-L/opt/homebrew/opt/postgresql@14/lib"
         export CPPFLAGS="-I/opt/homebrew/opt/postgresql@14/include"
+
+        export PATH="$PATH:/Users/hemroda/.asdf/installs/python/3.13.2/bin"
     fi
 
     # Intel i386 architecture configurations
@@ -63,17 +68,3 @@ if [[ "$(uname)" == "Darwin" ]]; then
         export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
     fi
 fi
-
-
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/hemroda/Library/Application Support/Herd/config/php/84/"
-
-
-# Herd injected NVM configuration
-export NVM_DIR="/Users/hemroda/Library/Application Support/Herd/config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
-
-# Herd injected PHP binary.
-export PATH="/Users/hemroda/Library/Application Support/Herd/bin/":$PATH

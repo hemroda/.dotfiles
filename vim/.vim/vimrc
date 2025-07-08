@@ -1,15 +1,12 @@
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Note: Make sure the function is defined before `vim-buffet` is loaded.
 function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=15 ctermfg=0 guibg=#00FF00 guifg=#000000
-  hi! BuffetBuffer cterm=NONE ctermbg=0 ctermfg=15 guibg=#00FF00 guifg=#000000
+  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00FF00 guifg=#000000
 endfunction
 
 source $HOME/.vim/plugins.vim
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -18,11 +15,12 @@ source $HOME/.vim/plugins.vim
 " Setting leader key to comma
 let mapleader = ','
 " Source vimrc file
-nmap <leader>sv :source ~/.dotfiles/vim/.vim/vimrc<CR>
+nmap <leader>sv :source ~/dotfiles/vim/vimrc<CR>
 " Open vimrc file in new buffer for quick edit
-nmap ,ev :tabedit ~/.dotfiles/vim/.vim/vimrc<CR>
+nmap ,ev :tabedit ~/dotfiles/vim/vimrc<CR>
 " Open plugins file in new buffer for quick edit
-nmap ,ep :tabedit ~/.dotfiles/vim/.vim/plugins.vim<CR>
+nmap ,ep :tabedit ~/dotfiles/vim/plugins.vim<CR>
+
 
 " ------------------------ FILES ------------------------------
 " Close file
@@ -51,7 +49,6 @@ xnoremap > >gv
 xnoremap < <gv
 
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,7 +58,6 @@ set background=dark
 syntax on
 set termguicolors
 colorscheme gruvbox
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -131,9 +127,11 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 set undodir=~/.vim/undo
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " ============================== FZF ==========================
 map <leader>p :Files<CR>
@@ -158,10 +156,6 @@ noremap <S-Tab> :bp<CR>
 noremap <Leader><Tab> :Bw<CR>
 noremap <Leader><S-Tab> :Bw!<CR>
 noremap <C-t> :tabnew split<CR>
-
-function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00FF00 guifg=#000000
-endfunction
 
 
 " ================== Rainbow Parentheses ====================
@@ -190,4 +184,3 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-

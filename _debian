@@ -20,10 +20,12 @@ echo "Use Stow to link files"
 stow asdf
 stow shared
 stow vim
+stow vscodium
 
 asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
 asdf install golang 1.24.0
+asdf global golang 1.24.0
 
 asdf plugin-add python
-asdf install python 3.13.0
-asdf global python 3.13.0
+asdf install python 3.13.2
+asdf global python 3.13.2

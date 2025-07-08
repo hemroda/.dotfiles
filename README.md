@@ -1,4 +1,4 @@
-# Dotfiles
+# .dotfiles
 
 ## For Debian
 
@@ -28,7 +28,7 @@ sudo apt install git
 ```
 
 ```bash
-cd && git clone git@github.com:hemroda/.dotfiles.git
+cd && git clone https://gitlab.com/hemroda/dotfiles.git
 ```
 
 ### Make sure the `_debian` file is executable
@@ -43,7 +43,6 @@ chmod +x _debian
 ./_debian
 ```
 
-
 ## For MacOS
 
 ### install Xcode Command Line Tools
@@ -51,19 +50,15 @@ chmod +x _debian
 ```bash
 xcode-select --install
 ```
-
 In case Xcode installation is not working, install homebrew:
-
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-it will install Xcode.
-
 ## Clone dotfiles repo
 
 ```bash
-cd && git clone git@github.com:hemroda/.dotfiles.git
+$ cd && git clone https://gitlab.com/hemroda/dotfiles.git
 ```
 
 ### Generate SSH key and add it to Github or Gitlab
@@ -93,6 +88,7 @@ chmod +x _macos
 ### Run Installation script
 
 ```bash
-./install
+$ ./_macos
 ```
+
 

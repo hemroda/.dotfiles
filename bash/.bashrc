@@ -10,6 +10,7 @@ export PATH="$HOME/.asdf/shims:$PATH"
 
 eval "$(starship init bash)"
 
+
 # ----------------------------------------------------------------------- #
 # ----------------------------------------------------------------------- #
 # Linux - Debian #
@@ -70,3 +71,4 @@ if [ "$os" == "Darwin" ]; then
         export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
     fi
 fi
+. "$HOME/.cargo/env"
