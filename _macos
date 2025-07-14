@@ -99,8 +99,8 @@ asdf install python 3.13.4
 asdf global python 3.13.4
 
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 3.4.2
-asdf global ruby 3.4.2
+asdf install ruby 3.4.3
+asdf global ruby 3.4.3
 
 brew services start redis
 brew services start postgresql
