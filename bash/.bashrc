@@ -7,8 +7,27 @@ fi
 export EDITOR="vim"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
 
 eval "$(starship init bash)"
+
+
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+# Linux - Fedora #
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+if [ -f /etc/os-release ]; then
+    . /etc/os-release # Source the file to get variables like ID, NAME, etc.
+    if [ "$ID" == "fedora" ]; then
+        echo "Running Bash on Fedora"
+        . "$HOME/.asdf/asdf.sh" # Assuming asdf setup for Fedora
+        # Add any other Fedora-specific configurations here
+        # For example:
+        # export PATH="/usr/local/opt/fedora_specific_tool/bin:$PATH"
+    fi
+fi
 
 
 # ----------------------------------------------------------------------- #
@@ -71,4 +90,3 @@ if [ "$os" == "Darwin" ]; then
         export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
     fi
 fi
-. "$HOME/.cargo/env"
