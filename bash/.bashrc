@@ -65,9 +65,9 @@ if [ "$os" == "Darwin" ]; then
         PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
         export PATH="$HOME/.asdf/shims:$PATH"
 
-        export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
-        export LDFLAGS="-L/opt/homebrew/opt/postgresql@14/lib"
-        export CPPFLAGS="-I/opt/homebrew/opt/postgresql@14/include"
+        export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+        export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
+        export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
     fi
 
     # Intel i386 architecture configurations
@@ -87,6 +87,6 @@ if [ "$os" == "Darwin" ]; then
         export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
         export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
-        export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
+        export PATH="/usr/local/opt/postgresql@17/bin/psql:$PATH"
     fi
 fi

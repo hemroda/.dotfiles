@@ -38,13 +38,13 @@ if [[ "$(uname)" == "Darwin" ]]; then
         # asdf initialization
         . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-        PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+        export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+        export LDFLAGS="-L/opt/homebrew/opt/postgresql@17/lib"
+        export CPPFLAGS="-I/opt/homebrew/opt/postgresql@17/include"
 
-        export PATH="/opt/homebrew/opt/postgresql@14/bin:$PATH"
-        export LDFLAGS="-L/opt/homebrew/opt/postgresql@14/lib"
-        export CPPFLAGS="-I/opt/homebrew/opt/postgresql@14/include"
+        export PATH="$PATH:/Users/$USER/.asdf/installs/python/3.13.4/bin"
 
-        export PATH="$PATH:/Users/hemroda/.asdf/installs/python/3.13.2/bin"
+        export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
     fi
 
     # Intel i386 architecture configurations
@@ -56,7 +56,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
         alias brew='/usr/local/homebrew/bin/brew'
 
         # EXPORTS
-        PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
         export PATH="/usr/local/sbin:$PATH"
         export PATH="$HOME/.asdf/shims:$PATH"
 
@@ -65,6 +64,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
         export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
         export PKG_CONFIG_PATH="/usr/local/opt/openssl@3/lib/pkgconfig"
 
-        export PATH="/usr/local/opt/postgresql@14/bin/psql:$PATH"
+        export PATH="/usr/local/opt/postgresql@17/bin/psql:$PATH"
     fi
 fi
