@@ -45,4 +45,12 @@ if [[ "$os" == "Darwin" ]]; then
         echo "📁 Directory $CLONE_DIR/.dotfiles already exists. Skipping clone."
     fi
 
+    # Re-source Homebrew env just in case
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # Step 4: Run main install script
+    cd "$CLONE_DIR/.dotfiles"
+    echo "🚀 Running main install script..."
+    exec ./install.sh
+
 fi
