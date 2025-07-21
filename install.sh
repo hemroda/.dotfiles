@@ -47,6 +47,38 @@ fi
 
 # ----------------------------------------------------------------------- #
 # ----------------------------------------------------------------------- #
+# LINUX - Debian & Fedora #
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
+if [[ "$os" == "Linux" ]]; then
+    if grep -qi 'ID=debian' /etc/os-release || grep -qi 'ID_LIKE=.*debian' /etc/os-release; then
+        echo "Running Debian-based installations..."
+        sudo apt-get install --no-install-recommends -y build-essential
+        sudo apt-get install make build-essential libssl-dev zlib1g-dev
+        sudo apt-get install libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm
+        sudo apt-get install libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+        if [[ $(asdf --version) == "" ]]; then
+         git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.16.5
+        fi
+
+        if [[ $(command -v 'starship') == "" ]]; then
+         curl -sS https://starship.rs/install.sh | sh
+        fi
+
+        sudo apt install coreutils
+        sudo apt install git
+        sudo apt install neovim
+    elif grep -qi 'ID=fedora' /etc/os-release || grep -qi 'ID_LIKE=.*fedora' /etc/os-release; then
+        echo "Running Fedora-based installations..."
+        # Your Fedora-specific commands here
+    else
+        echo "Unknown Linux distribution."
+    fi
+fi
+
+# ----------------------------------------------------------------------- #
+# ----------------------------------------------------------------------- #
 # Shared #
 # ----------------------------------------------------------------------- #
 # ----------------------------------------------------------------------- #
