@@ -143,6 +143,7 @@ vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease wi
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 -- Move lines up/down
+-- TODO: Find a way to make this work for MacOS too
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })

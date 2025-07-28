@@ -2,5 +2,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
-  "workbench.iconTheme": "vscode-great-icons"
+  "workbench.iconTheme": "vscode-great-icons",
+  "files.autoSave": "afterDelay"
 }

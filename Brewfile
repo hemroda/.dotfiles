@@ -1,6 +1,7 @@
 tap "hashicorp/tap"
 
 # CLI Tools
+brew "ansible"
 brew "asdf"
 brew "fzf"
 brew "htop"
@@ -29,6 +30,7 @@ brew "coreutils"
 cask "brave-browser"
 cask "discord"
 cask "docker"
+cask "balenaetcher"
 cask "firefox"
 cask "firefox@developer-edition"
 cask "flux"
