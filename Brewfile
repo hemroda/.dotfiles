@@ -44,6 +44,7 @@ cask "vscodium"
 cask "signal"
 cask "telegram"
 cask "transmission"
+cask "virtualbox"
 cask "vlc"
 cask "whatsapp"
 
