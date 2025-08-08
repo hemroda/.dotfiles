@@ -10,7 +10,7 @@ alias ghostty='ghostty --config ~/.config/ghostty/config'
 # Navigation
 alias d="cd ~/.dotfiles"
 alias s="cd ~/Sites"
-alias ccf="cd ~/Sites/crud_in_the_cloud-fastapi"
+alias cc="cd ~/Sites/crud_in_the_cloud"
 alias dcc="cd ~/Sites/creolecorner/"
 alias py="cd ~/Sites/pystation"
 alias zet="cd /Users/${USER}/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Zettelkasten"

@@ -45,6 +45,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
         export PATH="$PATH:/Users/$USER/.asdf/installs/python/3.13.4/bin"
 
         export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+        
+        # Java
+        export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+        export CPPFLAGS="-I/opt/homebrew/opt/openjdk@21/include"
     fi
 
     # Intel i386 architecture configurations

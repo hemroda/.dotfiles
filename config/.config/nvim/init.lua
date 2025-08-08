@@ -36,7 +36,9 @@ vim.cmd.colorscheme("unokai")
 vim.opt.number = true			                   -- Line numbers
 vim.opt.relativenumber = true 		               -- Relative line numbers
 vim.opt.cursorline = true		                   -- Highlight current line
-vim.opt.wrap = false			                   -- Don't wrap lines
+vim.opt.wrap = true			                       -- Don't wrap lines
+vim.opt.signcolumn = "yes"                         -- Always show sign column
+vim.opt.textwidth = 100                            -- automatically insert line breaks at 100 chars
 vim.opt.scrolloff = 10			                   -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8                          -- Keep 8 columns left/right cursor
 
@@ -51,7 +53,7 @@ vim.opt.autoindent = true                          -- Copy indent from current l
 -- Search settings
 vim.opt.ignorecase = true                          -- Case insensitive search
 vim.opt.smartcase = true                           -- Case sensitive if uppercase in search
-vim.opt.hlsearch = false                           -- Don't highlight search results 
+vim.opt.hlsearch = true                            -- Don't highlight search results
 vim.opt.incsearch = true                           -- Show matches as you type
 
 -- Visual settings
